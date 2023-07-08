@@ -32,7 +32,7 @@ nav > a {
   color: black;
 }
 
-.about-container {
+section {
   margin-left: 30px;
   margin-top: 10vh;
 }
@@ -64,7 +64,7 @@ h1 {
 }
 
 @media (min-width: 768px) {
-  .about-container {
+  section {
     margin-left: 30px;
     margin-top: 10vh;
   }
