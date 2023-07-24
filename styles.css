@@ -80,3 +80,40 @@ h1 {
     margin-right: 30px;
   }
 }
+
+.card-header {
+  background-color: #eef4ed;
+}
+
+.floating-text {
+  align-self: center;
+  animation: floating 2s infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.getintouchli {
+  list-style: none !important;
+}
