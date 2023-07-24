@@ -1,11 +1,3 @@
-# An portfolio repository
-includes the feature for
-- adding projects,
-- qualifications and 
-- blogs
+Hey there.
 
-
-## I know
-1. JS
-2. HTML
-3. Python
+Jump [here](https://darayn.github.io/)
