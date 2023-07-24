@@ -4,6 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dhanesh Phulphagar</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
@@ -13,7 +19,7 @@
         <a class="nav-items" href="#work">Work</a>
         <a class="nav-items" href="#project">Projects</a>
         <a class="nav-items" href="#blog">Blogs</a>
-        <a class="nav-items" href="#contact">Contact</a>
+        <a class="nav-items" href="#contact">Reach Out Here</a>
       </nav>
     </header>
     <main>
@@ -44,69 +50,162 @@
         </div>
       </section>
       <section id="work">
-        <h1><u>Experience</u></h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio maxime
-          officiis distinctio natus expedita voluptates officia in placeat
-          libero mollitia, repudiandae sapiente ea molestiae, aliquam molestias
-          ipsa, ipsam necessitatibus doloremque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis neque
-          blanditiis rerum consectetur et, exercitationem omnis. Architecto,
-          nobis. Quae, quibusdam! Laborum dignissimos cumque architecto incidunt
-          hic debitis quis placeat accusantium.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio maxime
-          officiis distinctio natus expedita voluptates officia in placeat
-          libero mollitia, repudiandae sapiente ea molestiae, aliquam molestias
-          ipsa, ipsam necessitatibus doloremque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis neque
-          blanditiis rerum consectetur et, exercitationem omnis. Architecto,
-          nobis. Quae, quibusdam! Laborum dignissimos cumque architecto incidunt
-          hic debitis quis placeat accusantium.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio maxime
-          officiis distinctio natus expedita voluptates officia in placeat
-          libero mollitia, repudiandae sapiente ea molestiae, aliquam molestias
-          ipsa, ipsam necessitatibus doloremque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis neque
-          blanditiis rerum consectetur et, exercitationem omnis. Architecto,
-          nobis. Quae, quibusdam! Laborum dignissimos cumque architecto incidunt
-          hic debitis quis placeat accusantium.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio maxime
-          officiis distinctio natus expedita voluptates officia in placeat
-          libero mollitia, repudiandae sapiente ea molestiae, aliquam molestias
-          ipsa, ipsam necessitatibus doloremque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis neque
-          blanditiis rerum consectetur et, exercitationem omnis. Architecto,
-          nobis. Quae, quibusdam! Laborum dignissimos cumque architecto incidunt
-          hic debitis quis placeat accusantium.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio maxime
-          officiis distinctio natus expedita voluptates officia in placeat
-          libero mollitia, repudiandae sapiente ea molestiae, aliquam molestias
-          ipsa, ipsam necessitatibus doloremque.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis neque
-          blanditiis rerum consectetur et, exercitationem omnis. Architecto,
-          nobis. Quae, quibusdam! Laborum dignissimos cumque architecto incidunt
-          hic debitis quis placeat accusantium.
-        </p>
+        <div class="card">
+          <div class="card-header">Marchtee.com</div>
+          <div class="card-body">
+            <h5 class="card-title">Software Development Engineer 1</h5>
+            <p class="card-text">
+              During my tenure at MarchTee.com, an e-commerce t-shirt brand, I
+              contributed to numerous high-profile projects as a Developer.
+            </p>
+            <ul>
+              <li>
+                <p class="card-text">
+                  Integrated user role-based operations (authentication, login,
+                  creation, and activity log updates) in the Backstage V2
+                  project.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Enhanced the Pickup Mail service by integrating various
+                  carrier APIs for return pickup notifications using crontab
+                  calls and implemented UPI refund detail inputs on the order
+                  page in case of COD.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  For the Dynamic Shipping project, introduced weight-based
+                  shipping price adjustments and oversaw weight data
+                  synchronisation from the Odoo server. Slabbing the
+                  weight-based checkout for human friendly shipping checkout.
+                  Used flask sessions for storing slabs.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Developed backend for the new layout during the March Sale 23,
+                  optimising functions for mapping new sale size layouts to
+                  pre-orders and sold-out items. Also added preview
+                  functionality for reviewing the sale.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Established an OTP login system for the order page, ensuring
+                  enhanced security by storing flask sessions in the browser.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Ventured into AI with OpenAI api's, utilising techniques to
+                  tag Helpscout mails and draft replies. Carried out operations
+                  like data-preparation and data-preprocessing to augment bigger
+                  dataset from much smaller data set. Successfully fine-tuned
+                  and deployed two models on the custom dataset.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Made internal dashboard for summarising the payament-gateway
+                  performance on checkout. Used cronjob for storing the regular
+                  PG performance(sucess failure counts) in redis to avoid larger
+                  response times. Payment Gateways involved - Stripe, Cashfree,
+                  CCAvenue and Cod transactions. Redis helped to solved timeout
+                  issue on nginx server. Used svelte lifecycle methods and
+                  Django as backend to complete this project. This helped in
+                  faster decision making for switching between gateways.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Demonstrated versatility and a broad skill set as a developer,
+                  proficient in NextJS, FastAPI, SvelteJs, Svelte-kit, and
+                  Django REST framework, during tenure at MarchTee.com.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Cognizant</div>
+          <div class="card-body">
+            <h5 class="card-title">
+              Programmer Analyst - ServiceNow Developer
+            </h5>
+            <p class="card-text">
+              During my tenure at Cognizant, I did complete achieved ServiceNow
+              Certified System Administrator and Application Developer
+              certifications. Along with that, I also worked on some realworld
+              projects
+            </p>
+            <ul>
+              <li>
+                <p class="card-text">
+                  Developed an Organisational Vaccination Survey project using
+                  ServiceNow and REST Framework, integrated with the COWIN API.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Moreover, I had the opportunity to collaborate with prominent
+                  clients like Walmart. I played a key role in mainframe
+                  migration projects, reinforcing my skills in legacy system
+                  transformation and modernisation.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  In summary, my experience at Cognizant was highlighted by
+                  professional development, technical excellence in ServiceNow,
+                  API integrations, and successful collaborations with
+                  high-profile clients.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            Centre for Development of Advanced Computing(CDAC)
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Reasearch Intern</h5>
+            <p class="card-text">
+              At CDAC, my work primarily focused on exploring and implementing
+              Text-to-Speech (TTS) models.
+            </p>
+            <ul>
+              <li>
+                <p class="card-text">
+                  Explored and researched various Text-to-Speech (TTS) models by
+                  NVIDIA and Mozilla.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Contributed to the reimplementation of Mozilla's TTS for the
+                  Odia language, including data pre-processing.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Implemented DeepMind's WaveRNN model in PyTorch as a vocoder
+                  for TTS.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
+      <section id="project"></section>
     </main>
     <footer></footer>
   </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
 </html>
