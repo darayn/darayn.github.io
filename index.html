@@ -12,7 +12,7 @@
     />
   </head>
 
-  <body>
+  <body style="background-color: #f2f4ed">
     <header>
       <nav class="flex-container">
         <a class="nav-items" href="#about">About</a>
@@ -24,6 +24,9 @@
     </header>
     <main>
       <section id="about">
+        <div class="section-tag">
+          <u>About me</u>
+        </div>
         <div class="about-container">
           <h2>Hi</h2>
           <div class="name-wrapper">
@@ -50,6 +53,9 @@
         </div>
       </section>
       <section id="work">
+        <div class="section-tag">
+          <u>Experience</u>
+        </div>
         <div class="card">
           <div class="card-header">Marchtee.com</div>
           <div class="card-body">
@@ -199,7 +205,161 @@
           </div>
         </div>
       </section>
-      <section id="project"></section>
+      <section id="project">
+        <div class="section-tag">
+          <u>Projects</u>
+        </div>
+        <div class="card">
+          <div class="card-header">Gemald Ecommerse</div>
+          <div class="card-body">
+            <p class="card-text">
+              An E-commerce platform for paintings with extended features such
+              as payment gateway and admin portal. Also added private routing
+              for role based access.
+            </p>
+            <ul>
+              <li>
+                <p class="card-text">
+                  Used <span class="bold">Express</span> backend server for all
+                  the API's. Used middlewares for populating user data on
+                  authentication required routes.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  MongoDD as a Database helped me get the gist of document based
+                  databases. Used MongoDB atlas service to store all the
+                  collections and fields.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Used JWT tokens for authorising users on react client as a
+                  frontend. Encryping the real passwords to db. Created two
+                  major two roles i.e User and Admin for role based acess to
+                  api's and pages.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Explored major concepts like hooks, states, and private routes
+                  within SPA framework like reactJS.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  The whole combination of MongoDB, React, NodeJS, Express
+                  helped me achieve greater learning curve towards fullstack
+                  development.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Fitbuddy</div>
+          <div class="card-body">
+            <p class="card-text">User-User Recommendation for Fitness Freak</p>
+            <ul>
+              <li>
+                <p class="card-text">
+                  A user to user based content filtering recommendation system
+                  for fitness freaks using python.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  The system helps a user to find a fitness companion over the
+                  internet using 5-10 similarity metrics using the application
+                  of cosine similarity and also using distance between the users
+                  using haversine distance.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Used python UI widget to demonstrate the whole working of
+                  algorithm.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Currently, again working on this project to build working
+                  fullstack application out of it. The stack being considered is
+                  Fastapi for backend and NextJS as a frontend.(WIP)
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">Messenger Clone</div>
+          <div class="card-body">
+            <p class="card-text">
+              Developed a functional Facebook Messenger clone using React Hooks,
+              enabling state management and enhancing user interactions.
+            </p>
+            <ul>
+              <li>
+                <p class="card-text">
+                  Firebase Realtime Database served as the backend, allowing
+                  real-time message synchronization and seamless updates across
+                  users.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Achieved a user interface similar to Facebook Messenger using
+                  Material UI CDN, providing a familiar and visually appealing
+                  experience.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  Incorporated NPM Flip Move functionality to enable smooth
+                  message traversals, enhancing the visual flow of messages
+                  within the chat interface.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">COVID-19 Tracker</div>
+          <div class="card-body">
+            <p class="card-text">
+              Tracker using ReactJS and integrated the "disease.sh" API to fetch
+              and display real-time updated cases' status for different
+              countries.
+            </p>
+            <ul>
+              <li>
+                <p class="card-text">
+                  Effectively classified the multiple objects of data pulled
+                  from the API based on the application's requirements. Utilized
+                  ReactJS states and hooks, along with JavaScript
+                  functionalities, to manage and organize the data for smooth
+                  user interactions.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  he user experience was thoughtfully designed and implemented
+                  using the MaterialUI CDN, providing an intuitive and visually
+                  appealing interface for users to interact with the COVID-19
+                  data.
+                </p>
+              </li>
+              <li>
+                <p class="card-text">
+                  The project was successfully deployed on Firebase Hosting,
+                  ensuring easy accessibility and real-time updates for users to
+                  access the COVID-19 tracking application.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
     <footer></footer>
   </body>
