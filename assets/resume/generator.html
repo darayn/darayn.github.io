@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanesh Phulphagar - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.3;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            background: white;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2c3e50;
+        }
+        
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 2px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 4px;
+        }
+        
+        .contact-info {
+            font-size: 10px;
+            color: #666;
+            margin-top: 4px;
+        }
+        
+        .contact-info a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        section {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin-top: 8px;
+            margin-bottom: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 11px;
+            color: #2c3e50;
+            margin-top: 6px;
+            margin-bottom: 2px;
+            font-weight: 700;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        
+        .job-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .job-date {
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .company {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 4px;
+        }
+        
+        .section-content {
+            margin-bottom: 8px;
+        }
+        
+        ul {
+            margin-left: 18px;
+            margin-top: 2px;
+            margin-bottom: 4px;
+        }
+        
+        li {
+            font-size: 10px;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        
+        .skill-category {
+            margin-bottom: 4px;
+        }
+        
+        .skill-category strong {
+            font-size: 11px;
+            color: #2c3e50;
+            display: inline;
+            margin-right: 4px;
+        }
+        
+        .skill-category span {
+            font-size: 10px;
+            color: #555;
+            line-height: 1.3;
+        }
+        
+        .project {
+            margin-bottom: 6px;
+        }
+        
+        .project-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #2c3e50;
+            display: inline;
+        }
+        
+        .project-desc {
+            font-size: 10px;
+            color: #555;
+            display: inline;
+        }
+        
+        .tech-stack {
+            font-size: 9px;
+            color: #666;
+            font-style: italic;
+            margin-top: 1px;
+        }
+        
+        .education-item {
+            margin-bottom: 4px;
+        }
+        
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        
+        .edu-school {
+            font-size: 11px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .edu-date {
+            font-size: 10px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .edu-degree {
+            font-size: 10px;
+            color: #555;
+        }
+        
+        .intro-text {
+            font-size: 10px;
+            margin-bottom: 4px;
+            font-style: italic;
+        }
+        
+        @media print {
+            body {
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DHANESH PHULPHAGAR</h1>
+        <div class="subtitle">Full Stack Software Developer</div>
+        <div class="contact-info">
+            pdhanesh343@gmail.com | +91 9145278388 | 
+            <a href="https://darayn.github.io">darayn.github.io</a> | 
+            GitHub: darayn | LinkedIn: dhanesh-phulphagar
+        </div>
+    </header>
+
+    <section>
+        <h2>Professional Experience</h2>
+        
+        <div class="section-content">
+            <div class="job-header">
+                <div class="job-title">Software Development Engineer - 2 (SDE-2)</div>
+                <div class="job-date">September 2023 - Present</div>
+            </div>
+            <div class="company">MarchTee.com, Pune, India</div>
+            <p class="intro-text">Core maintainer of 5 production repositories powering e-commerce infrastructure:</p>
+            
+            <h3>March Tee Shop - Full-stack E-commerce Platform</h3>
+            <ul>
+                <li>Architected complete CMS for product/asset management with S3 integration and group-based authentication with role-based access control</li>
+                <li>Implemented Redis caching strategy reducing page latency by 80%; optimized collections backend decreasing designer dependency</li>
+                <li>Developed store designer supporting multiple shop themes with dynamic size guides and CMS-driven collections</li>
+            </ul>
+            
+            <h3>March Odoo Customizations - Custom ERP System</h3>
+            <ul>
+                <li>Led Odoo ERP customizations for invoicing, delivery workflows, transfers, hangtag labels, purchase orders, and stock alerts</li>
+                <li>Integrated Mox mailing server for SMTP reducing AWS SES costs; set up Listmonk and WhatsApp Cloud API integration</li>
+            </ul>
+            
+            <h3>Deployer - Infrastructure Automation</h3>
+            <ul>
+                <li>Created Ansible-based deployment pipeline for bare metal infrastructure with on-demand notebooks for multi-service setup</li>
+                <li>Automated deployments for March Tee Shop, March Next, Odoo, Listmonk, Stalwart SMTP, and Frigate surveillance</li>
+            </ul>
+            
+            <h3>March Next - Modern Checkout Platform</h3>
+            <ul>
+                <li>Built checkout experience with authentication, saved payments, and address management using Nuxt 4 and Tailwind CSS</li>
+                <li>Integrated multi-seller support with Marshmallow and Python RestX API; configured Nginx proxy for seamless delivery</li>
+            </ul>
+            
+            <h3>Kavinath - AI-Powered Support Automation</h3>
+            <ul>
+                <li>Developed OpenAI-based tool for Helpscout email tagging and automated draft generation with custom plugins</li>
+                <li>Fine-tuned and deployed two custom models, significantly reducing support team workload on common FAQs</li>
+            </ul>
+        </div>
+        
+        <div class="section-content">
+            <div class="job-header">
+                <div class="job-title">Software Development Engineer - 1 (SDE-1)</div>
+                <div class="job-date">September 2022 - September 2023</div>
+            </div>
+            <div class="company">MarchTee.com, Pune, India</div>
+            <ul>
+                <li>Implemented payment integrations (Cashfree, Stripe, PayPal) with webhook handling; built Svelte/Django dashboard for gateway monitoring</li>
+                <li>Developed Vanilla JS template editor for transaction emails; implemented cron jobs for shipment tracking and marketing workflows</li>
+            </ul>
+        </div>
+        
+        <div class="section-content">
+            <div class="job-header">
+                <div class="job-title">Programmer Analyst - ServiceNow Infrastructure Developer</div>
+                <div class="job-date">February 2021 - June 2022</div>
+            </div>
+            <div class="company">Cognizant Technology Solutions, India</div>
+            <ul>
+                <li>Achieved ServiceNow Certified System Administrator and Application Developer certifications</li>
+                <li>Developed vaccination survey platform using ServiceNow/Django REST Framework integrated with COWIN API</li>
+                <li>Collaborated with Walmart on mainframe migration projects demonstrating expertise in legacy system modernization</li>
+            </ul>
+        </div>
+        
+        <div class="section-content">
+            <div class="job-header">
+                <div class="job-title">Research Intern</div>
+                <div class="job-date">January 2020 - April 2020</div>
+            </div>
+            <div class="company">Centre for Development of Advanced Computing (CDAC), Pune, India</div>
+            <ul>
+                <li>Researched NVIDIA and Mozilla's TTS models; reimplemented Mozilla's TTS for Odia language with custom preprocessing</li>
+                <li>Implemented DeepMind's WaveRNN vocoder model in PyTorch for TTS synthesis</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <strong>Programming Languages:</strong>
+                <span>Python, JavaScript, HTML, CSS, C++, C, Bash</span>
+            </div>
+            <div class="skill-category">
+                <strong>Libraries & Frameworks:</strong>
+                <span>React.js, Next.js, Nuxt, Flask, Django, Django REST Framework, Svelte.js, SvelteKit, jQuery, Node.js, Express.js</span>
+            </div>
+            <div class="skill-category">
+                <strong>Tools & Platforms:</strong>
+                <span>Git, GitHub, PostgreSQL, MongoDB, Redis, Ansible, Nginx, OpenAI API, OpenAPI, Swagger</span>
+            </div>
+            <div class="skill-category">
+                <strong>Core Competencies:</strong>
+                <span>Data Structures & Algorithms, Database Management, Operating Systems, System Design, REST APIs, DevOps</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="education-item">
+            <div class="edu-header">
+                <div class="edu-school">Pune University</div>
+                <div class="edu-date">2017 - 2021</div>
+            </div>
+            <div class="edu-degree">Bachelor of Engineering in Information Technology</div>
+        </div>
+        
+        <div class="education-item">
+            <div class="edu-header">
+                <div class="edu-school">Nowrosjee Wadia College</div>
+                <div class="edu-date">2015 - 2017</div>
+            </div>
+            <div class="edu-degree">Higher Secondary Certificate (HSC) - Science</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        
+        <div class="project">
+            <div class="project-title">Gemald Ecommerce:</div>
+            <div class="project-desc">E-commerce platform for paintings with payment gateway, admin portal, and role-based access control.</div>
+            <div class="tech-stack">Tech Stack: MongoDB, Express.js, React.js, Node.js (MERN)</div>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">Fitbuddy:</div>
+            <div class="project-desc">User-to-user recommendation system for fitness enthusiasts using cosine similarity and haversine distance metrics.</div>
+            <div class="tech-stack">Tech Stack: Python, Jupyter Notebook, Python UI Widgets</div>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">Covid-19 Tracker:</div>
+            <div class="project-desc">Country-wise COVID-19 tracker with real-time data visualization.</div>
+            <div class="tech-stack">Tech Stack: React.js, JavaScript, Material UI, Firebase, disease.sh API</div>
+        </div>
+    </section>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = 'Download as PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #2c3e50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; z-index: 1000;';
+            printBtn.onclick = function() {
+                window.print();
+            };
+            document.body.appendChild(printBtn);
+            
+            window.onbeforeprint = function() {
+                printBtn.style.display = 'none';
+            };
+            window.onafterprint = function() {
+                printBtn.style.display = 'block';
+            };
+        };
+    </script>
+</body>
+</html>
