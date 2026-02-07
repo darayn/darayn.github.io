@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dhanesh Phulphagar - Full-Stack Software Engineer specializing in Python, JavaScript, and e-commerce solutions" />
+    <title>Dhanesh Phulphagar - Full-Stack Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .text-gradient {
+          background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .bg-grid {
+          background-image: 
+            linear-gradient(to right, rgb(229 231 235 / 0.3) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(229 231 235 / 0.3) 1px, transparent 1px);
+          background-size: 24px 24px;
+        }
+        .dark .bg-grid {
+          background-image: 
+            linear-gradient(to right, rgb(55 65 81 / 0.3) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(55 65 81 / 0.3) 1px, transparent 1px);
+          background-size: 24px 24px;
+        }
+      }
+    </style>
+    <script>
+      // Dark mode initialization
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300" style="font-family: Inter, 'Inter Placeholder', sans-serif;">
+    
+    <!-- Animated Background Gradients -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+      <div class="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 dark:from-blue-600/10 dark:to-purple-600/10 rounded-full blur-3xl animate-blob"></div>
+      <div class="absolute top-40 -right-40 w-80 h-80 bg-gradient-to-br from-purple-400/20 to-pink-400/20 dark:from-purple-600/10 dark:to-pink-600/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+      <div class="absolute -bottom-40 left-1/2 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 dark:from-blue-600/10 dark:to-cyan-600/10 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+    </div>
+    
+    <style>
+      @keyframes blob {
+        0%, 100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.9);
+        }
+      }
+      .animate-blob {
+        animation: blob 15s infinite;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
+      }
+    </style>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="fixed top-6 right-6 z-50 p-2.5 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700">
+      <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+      </svg>
+      <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+
+    <script>
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+      const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+      // Show the correct icon on page load
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        themeToggleLightIcon.classList.remove('hidden');
+      } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+      }
+
+      themeToggleBtn.addEventListener('click', function() {
+        // Toggle icons
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
+
+        // Toggle theme
+        if (localStorage.getItem('theme')) {
+          if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+          }
+        } else {
+          if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+          } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+          }
+        }
+      });
+    </script>
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 px-6 relative overflow-hidden">
+      <div class="absolute inset-0 bg-grid opacity-40"></div>
+      <div class="max-w-4xl mx-auto relative">
+        <div class="space-y-4">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
+            Hi, I'm <span class="text-gradient">Dhanesh</span>
+          </h1>
+          <p class="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+            Full-Stack Software Engineer specializing in building scalable e-commerce solutions and modern web applications.
+          </p>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="mailto:pdhanesh343@gmail.com" class="px-5 py-2.5 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium">
+              Get in touch
+            </a>
+            <a href="https://github.com/darayn" target="_blank" class="px-5 py-2.5 border border-gray-300 dark:border-gray-700 text-sm rounded-lg hover:border-gray-400 dark:hover:border-gray-600 transition-colors font-medium">
+              View GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-50/50 dark:from-gray-900/50 to-transparent"></div>
+      <div class="max-w-4xl mx-auto relative">
+        <h2 class="text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+          <div class="space-y-3">
+            <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+              I'm a full-stack software engineer with over 3 years of experience building production-grade applications. Currently, I serve as the sole technical owner at March Work, where I maintain and evolve an entire e-commerce platform.
+            </p>
+            <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+              I specialize in Python, JavaScript ecosystems, and have deep experience with e-commerce architecture, payment integrations, and DevOps automation.
+            </p>
+          </div>
+          <div class="space-y-5">
+            <div>
+              <h3 class="font-semibold mb-2.5 text-gray-900 dark:text-gray-100 text-sm">Core Technologies</h3>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">Python</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">JavaScript</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">TypeScript</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">React</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">Next.js</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">Vue/Nuxt</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">Flask</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">Django</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">PostgreSQL</span>
+                <span class="px-2.5 py-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded text-xs font-mono">Ansible</span>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <a href="https://github.com/darayn" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/dhanesh-phulphagar" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="https://darayn.github.io" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 px-6 relative">
+      <div class="absolute inset-0 bg-grid opacity-30"></div>
+      <div class="max-w-4xl mx-auto relative">
+        <h2 class="text-2xl font-bold mb-8">Experience</h2>
+        <div class="space-y-10">
+          
+          <!-- March Work -->
+          <div class="border-l-2 border-gray-200 dark:border-gray-800 pl-6 space-y-6">
+            <div>
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+                <div>
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">Sole Software Engineer</h3>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">March Work Private Limited</p>
+                </div>
+                <span class="text-xs text-gray-500 dark:text-gray-500 mt-1 md:mt-0 font-mono">Sept 2023 - Present</span>
+              </div>
+              <p class="text-sm text-gray-700 dark:text-gray-300 mb-5">Solo technical owner maintaining 4 production repositories for e-commerce t-shirt brand</p>
+              
+              <!-- Repositories -->
+              <div class="space-y-4">
+                <div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg p-5 border border-gray-200 dark:border-gray-800">
+                  <div class="flex items-center justify-between mb-2.5">
+                    <h4 class="font-semibold text-gray-900 dark:text-gray-100 text-sm">March Shop</h4>
+                    <span class="text-xs px-2 py-0.5 bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-400 rounded font-mono">Python • Flask • PostgreSQL</span>
+                  </div>
+                  <ul class="space-y-1.5 text-xs text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                      <span>Rebuilt authentication system with RBAC, WebAuthn, OAuth, and passwordless OTP</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                      <span>Migrated entire CMS to database architecture with R2/S3 asset management</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                      <span>Built checkout API with US localization, saved addresses, and tokenized card payments</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                      <span>Optimized PostgreSQL full-text search and developed fraud detection workflows</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg p-5 border border-gray-200 dark:border-gray-800">
+                  <div class="flex items-center justify-between mb-2.5">
+                    <h4 class="font-semibold text-gray-900 dark:text-gray-100 text-sm">March Next</h4>
+                    <span class="text-xs px-2 py-0.5 bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-400 rounded font-mono">Nuxt.js • Vue</span>
+                  </div>
+                  <ul class="space-y-1.5 text-xs text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                      <span>Achieved 90% reduction in checkout time with streamlined frontend</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                      <span>Integrated Cashfree, CCAvenue payment gateways with UPI and net banking</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-lg p-5 border border-gray-200 dark:border-gray-800">
+                  <div class="flex items-center justify-between mb-2.5">
+                    <h4 class="font-semibold text-gray-900 dark:text-gray-100 text-sm">Odoo Brand & Deployer</h4>
+                    <span class="text-xs px-2 py-0.5 bg-purple-50 dark:bg-purple-950 text-purple-700 dark:text-purple-400 rounded font-mono">Python • Ansible</span>
+                  </div>
+                  <ul class="space-y-1.5 text-xs text-gray-700 dark:text-gray-300">
+                    <li class="flex items-start">
+                      <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                      <span>Maintain custom ERP managing inventory, invoicing, and financial reporting</span>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                      <span>Built Ansible-based CI/CD pipeline with fail2ban security and automated deployments</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cognizant -->
+          <div class="border-l-2 border-gray-200 dark:border-gray-800 pl-6">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">Programmer Analyst</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Cognizant</p>
+              </div>
+              <span class="text-xs text-gray-500 dark:text-gray-500 mt-1 md:mt-0 font-mono">Feb 2021 - June 2022</span>
+            </div>
+            <ul class="space-y-1.5 text-xs text-gray-700 dark:text-gray-300">
+              <li class="flex items-start">
+                <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                <span>Developed ServiceNow vaccination survey integrated with COWIN API</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                <span>Achieved ServiceNow System Administrator and Application Developer certifications</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CDAC -->
+          <div class="border-l-2 border-gray-200 dark:border-gray-800 pl-6">
+            <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">Research Intern</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">CDAC</p>
+              </div>
+              <span class="text-xs text-gray-500 dark:text-gray-500 mt-1 md:mt-0 font-mono">Jan 2020 - April 2020</span>
+            </div>
+            <ul class="space-y-1.5 text-xs text-gray-700 dark:text-gray-300">
+              <li class="flex items-start">
+                <span class="text-blue-600 dark:text-blue-400 mr-2 mt-0.5">•</span>
+                <span>Reimplemented Mozilla TTS for Odia language with PyTorch-based WaveRNN vocoder</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 px-6 relative">
+      <div class="absolute inset-0 bg-gradient-to-t from-gray-50/50 dark:from-gray-900/50 to-transparent"></div>
+      <div class="max-w-4xl mx-auto relative">
+        <h2 class="text-2xl font-bold mb-8">Notable Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <div class="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors">
+            <h3 class="font-bold text-sm mb-2">Gemald E-commerce</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400 mb-3 leading-relaxed">Full-stack e-commerce platform for paintings with payment gateway and admin portal</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">MongoDB</span>
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">Express</span>
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">React</span>
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">Node.js</span>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors">
+            <h3 class="font-bold text-sm mb-2">FitBuddy</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400 mb-3 leading-relaxed">User recommendation system for fitness enthusiasts using ML similarity algorithms</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">Python</span>
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">Jupyter</span>
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">ML</span>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 rounded-lg p-5 border border-gray-200 dark:border-gray-800 hover:border-gray-300 dark:hover:border-gray-700 transition-colors">
+            <h3 class="font-bold text-sm mb-2">COVID-19 Tracker</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400 mb-3 leading-relaxed">Real-time country-wise COVID-19 tracking with disease.sh API integration</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">React</span>
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">Material-UI</span>
+              <span class="text-xs px-2 py-0.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-mono">Firebase</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-100 dark:border-gray-900 py-8 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="flex flex-col items-center md:items-start gap-2">
+            <p class="text-xs text-gray-600 dark:text-gray-400">© 2026 Dhanesh Phulphagar. All rights reserved.</p>
+            <a href="mailto:pdhanesh343@gmail.com" class="text-xs text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100 transition-colors font-mono">pdhanesh343@gmail.com</a>
+          </div>
+          <div class="flex gap-5">
+            <a href="https://github.com/darayn" target="_blank" class="text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">GitHub</a>
+            <a href="https://linkedin.com/in/dhanesh-phulphagar" target="_blank" class="text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">LinkedIn</a>
+            <a href="https://darayn.github.io" target="_blank" class="text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors">Website</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
