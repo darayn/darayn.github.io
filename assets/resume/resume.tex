@@ -1,6 +1,6 @@
 %-------------------------
 % Resume in LaTeX
-% Author : Dhanesh Phulphagar
+% Author : Ketan Dhoka
 % Based on: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
@@ -103,67 +103,74 @@
 
 %----------HEADING----------
 \begin{center}
-    \textbf{\Huge \scshape Dhanesh Phulphagar} \\ \vspace{1pt}
-    \small \textbf{Full-Stack Software Engineer} \\ \vspace{3pt}
-    \small +91-9145278388 $|$ \href{mailto:pdhanesh343@gmail.com}{\underline{pdhanesh343@gmail.com}} $|$ 
-    \href{https://darayn.github.io}{\underline{darayn.github.io}} $|$
-    \href{https://github.com/darayn}{\underline{github.com/darayn}} $|$
-    \href{https://linkedin.com/in/dhanesh-phulphagar}{\underline{linkedin.com/in/dhanesh-phulphagar}}
+    \textbf{\Huge \scshape Ketan Dhoka} \\ \vspace{1pt}
+    \small \textbf{Lead iOS Developer $|$ Technical Lead} \\ \vspace{3pt}
+    \small Pune, India $|$ +91-8956367006 $|$ \href{mailto:ketandhoka16@gmail.com}{\underline{ketandhoka16@gmail.com}} $|$
+    \href{https://linkedin.com/in/ketandhoka}{\underline{linkedin.com/in/ketandhoka}}
 \end{center}
+
+%-----------PROFESSIONAL SUMMARY-----------
+\section{Professional Summary}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \item[] \small{Technical Lead with 12+ years of experience building high-performance iOS applications using Swift, SwiftUI, and UIKit. Expertise in modernizing legacy systems with Swift Concurrency (async/await, TaskGroup) and designing scalable architectures using MVVM and Clean Architecture. Proven track record of delivering enterprise-grade solutions for global clients, significantly improving application performance, stability, and maintainability. Strong experience in Agile environments and advanced debugging, with a focus on leveraging AI-assisted development to improve productivity and code quality.}
+\end{itemize}
 
 %-----------EXPERIENCE-----------
 \section{Professional Experience}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Sole Software Engineer}{Sept 2023 -- Present}
-      {March Work Private Limited (Marchtee.com)}{Pune, India}
+      {Technical Lead}{Nov 2022 -- Present}
+      {Wipro Technologies Pvt. Ltd.}{Bengaluru, India}
       \vspace{2pt}
-      \small{Solo technical owner maintaining 4 production repositories for e-commerce t-shirt brand}
-      
-      \resumeRepoHeading{March Shop (Python/Flask/PostgreSQL)}{Core Maintainer + Contributor}
+      \small{\textit{Client: Apple Inc. (Customer Systems)}}
       \resumeItemListStart
-        \resumeItem{Inherited legacy monolith with no auth/CMS/OMS; rebuilt authentication system from scratch with RBAC, multi-device sessions, WebAuthn, OAuth, passwordless OTP}
-        \resumeItem{Migrated entire CMS from codebase to database: navigations, collections, metadata, metrology, size guides, static assets to R2/S3}
-        \resumeItem{Built single-page shop theme with custom grids and collections, engineered checkout API with US localization, saved addresses, tokenized cards}
-        \resumeItem{Optimized PostgreSQL full-text search using vectors, built payment gateway success rate dashboard reducing queries significantly}
-        \resumeItem{Developed reverse pickup mail notification cron, post-order workflows (COD detection, address similarity, fraud flagging, fake address detection)}
-        \resumeItem{Built returns/exchange reconciliation engine with discount considerations, shop size pickers, and backend analytics with design team}
-      \resumeItemListEnd
-      
-      \resumeRepoHeading{March Next (Nuxt.js/Vue)}{Core Maintainer + Contributor}
-      \resumeItemListStart
-        \resumeItem{Built frontend for checkout and public login achieving 90\% reduction in checkout time, earning recognition from brands across ecosystem}
-        \resumeItem{Developed guest and authenticated checkout with UPI, saved cards, seamless Cashfree, CCAvenue net banking, cookie-based Pinia persistence}
-        \resumeItem{Setup PM2 logging for production monitoring, error tracking, and debugging in initial rollout phase}
-      \resumeItemListEnd
-      
-      \resumeRepoHeading{Odoo Brand (Python/Odoo)}{Core Maintainer}
-      \resumeItemListStart
-        \resumeItem{Own and maintain custom ERP layer managing addresses, invoicing, inventory, financial reporting, delivery notes, stock lots, purchase and manufacturing}
-        \resumeItem{Built 10+ internal models for daily operations: exchange, return, splits, shipping service management, hangtag labels, stock labels, delivery labels}
-      \resumeItemListEnd
-      
-      \resumeRepoHeading{Deployer (Ansible/Bash)}{Core Maintainer + Contributor}
-      \resumeItemListStart
-        \resumeItem{Retired legacy Fabric deployer, built Ansible-based CI/CD supporting hard deployments and on-demand releases for all repositories}
-        \resumeItem{Implemented fail2ban rate limiting on standalone servers, setup tooling for Listmonk (self-hosted email marketing)}
-        \resumeItem{Deployed Frigate self-hosted surveillance for warehouse analytics with Google Drive backups across 3 locations via single command}
+        \resumeItem{Core contributor in developing the Media Client Framework (MCF), a reusable Cocoa framework supporting Genesys Contact Center channels for the voice media channel}
+        \resumeItem{Designed and maintained abstract business logic layers, exposing high-level Swift APIs consumed across multiple Apple internal applications}
+        \resumeItem{Enabled integration across applications used by over 125,000 advisors for Apple Reusable Contact Center}
+        \resumeItem{Developed scalable voice media channel operations, including session handling and real-time workflows}
+        \resumeItem{Built the ARCCVoice Swift Package for voice and video communication infrastructure}
+        \resumeItem{Led architectural discussions and cross-team collaboration across engineering groups}
+        \resumeItem{Managed release cycles, UAT coordination, and production support}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Programmer Analyst - ServiceNow Developer}{Feb 2021 -- June 2022}
-      {Cognizant}{India}
+      {Senior iOS Developer}{Apr 2022 -- Jul 2022}
+      {Oyo Technologies Pvt. Ltd.}{India}
       \resumeItemListStart
-        \resumeItem{Developed Vaccination Survey using ServiceNow/REST integrated with COWIN API, collaborated with Walmart on mainframe migrations}
-        \resumeItem{Achieved ServiceNow Certified System Administrator and Application Developer certifications}
+        \resumeItem{Developed and enhanced the TOD sports and entertainment live streaming application}
+        \resumeItem{Optimized UI responsiveness and overall application performance}
       \resumeItemListEnd
 
     \resumeSubheading
-      {Research Intern}{Jan 2020 -- April 2020}
-      {CDAC}{Pune, India}
+      {Senior iOS Developer}{May 2017 -- Apr 2021}
+      {JetSynthesys Pvt. Ltd.}{India}
       \resumeItemListStart
-        \resumeItem{Reimplemented Mozilla's TTS for Odia language with data preprocessing, implemented DeepMind's WaveRNN in PyTorch as vocoder}
+        \resumeItem{Delivered consumer and enterprise applications across multiple domains including sports, wellness, e-commerce, and media}
+        \resumeItem{Key projects: 100MB, ThinkRight.me, Wakau, Channel Fight (DRM), Nordisk Matas, Leasy}
+        \resumeItem{Implemented Live Streaming and MQTT protocol for a real-time one-to-one chat experience with Sachin Tendulkar}
+        \resumeItem{Developed the DigiAdz advertisement SDK and Jet Analytics framework, both adopted across multiple apps}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {iOS Developer}{Apr 2014 -- Feb 2017}
+      {Praxify Technologies Pvt. Ltd.}{India}
+      \resumeItemListStart
+        \resumeItem{Developed iPad-based EMR/EHR healthcare systems for clinical workflows}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {iOS Developer}{Apr 2013 -- Dec 2013}
+      {Iauro Technologies Pvt. Ltd.}{India}
+      \resumeItemListStart
+        \resumeItem{Projects: Benchprep, Servme, Goel Ganga, Check Content}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {iOS Developer}{Oct 2011 -- Nov 2012}
+      {Xerces Technologies Pvt. Ltd.}{India}
+      \resumeItemListStart
+        \resumeItem{Projects: Fantasy Wallpaper, Rotary Club Finder, Test Factory}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -172,12 +179,16 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, JavaScript, TypeScript, SQL, C++, HTML/CSS} \\
-     \textbf{Frontend}{: React, Next.js, Nuxt.js, Svelte, SvelteKit, jQuery} \\
-     \textbf{Backend}{: Django, Flask, Django REST Framework, Node.js, Express.js, Odoo} \\
-     \textbf{Databases}{: PostgreSQL (vectors, full-text search), MongoDB} \\
-     \textbf{DevOps}{: Ansible, PM2, Fail2ban, Git, AWS S3, Cloudflare R2} \\
-     \textbf{APIs \& Integration}{: REST, OAuth, WebAuthn, Payment Gateways (Cashfree, CCAvenue), OpenAI API}
+     \textbf{Programming}{: Swift, Objective-C} \\
+     \textbf{Platforms}{: iOS, macOS} \\
+     \textbf{Frameworks}{: UIKit, AppKit, SwiftUI (state management, data flow), Cocoa, Cocoa Touch, Core Animation, Foundation} \\
+     \textbf{Architecture}{: MVC, MVVM, clean and modular architecture, reusable components, SOLID principles} \\
+     \textbf{Concurrency}{: Swift Concurrency (async/await, Task, TaskGroup, async let, Actors, MainActor), structured concurrency, GCD, multithreading, thread safety, memory management, performance optimization} \\
+     \textbf{Networking \& APIs}{: REST APIs, URLSession, JSON parsing, Firebase, APNs} \\
+     \textbf{Debugging \& Profiling}{: LLDB, breakpoints, View Debugger, Memory Graph, Instruments} \\
+     \textbf{Build \& Dependencies}{: Swift Package Manager (SPM), CocoaPods} \\
+     \textbf{Tools \& Collaboration}{: Xcode, Git, GitHub, SVN, Jira, Radar} \\
+     \textbf{AI-Assisted Development}{: Code generation, debugging assistance, performance analysis, PR review support}
     }}
  \end{itemize}
 
@@ -185,29 +196,9 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Pune University}{Pune, India}
-      {Bachelor of Engineering in Information Technology}{2017 -- 2021}
+      {G.H. Raisoni College of Engineering \& Management}{India}
+      {B.E. in Computer Engineering}{2011}
   \resumeSubHeadingListEnd
-
-%-----------PROJECTS-----------
-\section{Notable Projects}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Gemald E-commerce} $|$ \emph{MongoDB, Express.js, React, Node.js}}{}
-          \resumeItemListStart
-            \resumeItem{E-commerce platform for paintings with payment gateway integration, admin portal, and role-based access control}
-          \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{FitBuddy} $|$ \emph{Python, Jupyter Notebook}}{}
-          \resumeItemListStart
-            \resumeItem{User-to-user recommendation system for fitness enthusiasts using cosine similarity and haversine distance across 5-10 metrics}
-          \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{COVID-19 Tracker} $|$ \emph{React, Material-UI, Firebase}}{}
-          \resumeItemListStart
-            \resumeItem{Country-wise COVID-19 tracking application with disease.sh API integration}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
 
 %-------------------------------------------
 \end{document}

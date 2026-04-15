@@ -202,22 +202,82 @@
         }
         
         @media print {
-            body {
-                padding: 15px 30px;
+            @page {
+                size: A4;
+                margin: 10mm 10mm 10mm 10mm;
             }
+            html, body {
+                width: 210mm;
+                height: auto;
+                padding: 0;
+                margin: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            body {
+                max-width: none;
+                padding: 0 6mm;
+                font-size: 9px;
+                line-height: 1.25;
+                /* Slight scale down to ensure single page fit */
+                zoom: 0.95; /* Chrome/Edge */
+                -ms-zoom: 0.95; /* IE/Edge Legacy */
+                -webkit-transform: scale(0.95); /* Safari fallback */
+                -webkit-transform-origin: top left;
+                transform: scale(0.95);
+                transform-origin: top left;
+            }
+            header {
+                margin-bottom: 6px;
+                padding-bottom: 4px;
+                border-bottom-width: 1px;
+            }
+            h1 { font-size: 22px; margin-bottom: 0; }
+            .subtitle { font-size: 12px; margin-bottom: 2px; }
+            .contact-info { font-size: 9px; margin-top: 2px; }
+            section { padding-bottom: 4px; margin-bottom: 4px; }
+            h2 { font-size: 14px; margin-top: 6px; margin-bottom: 4px; }
+            h3 { font-size: 10px; margin-top: 4px; margin-bottom: 1px; }
+            .job-title { font-size: 11px; }
+            .job-date { font-size: 9px; }
+            .company { font-size: 10px; margin-bottom: 2px; }
+            .intro-text { font-size: 9px; margin-bottom: 3px; }
+            ul { margin-left: 14px; margin-top: 1px; margin-bottom: 2px; }
+            li { font-size: 9px; margin-bottom: 1px; line-height: 1.25; }
+            .skills-grid { grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
+            .skill-category strong { font-size: 10px; }
+            .skill-category span { font-size: 9px; }
+            .project-title { font-size: 10px; }
+            .project-desc { font-size: 9px; }
+            .tech-stack { font-size: 8px; }
+            .education-item { margin-bottom: 2px; }
+            .edu-school { font-size: 10px; }
+            .edu-date { font-size: 9px; }
+            .edu-degree { font-size: 9px; }
+            /* Avoid awkward breaks */
+            header, section, .section-content, .education-item, .project { page-break-inside: avoid; }
+            /* Hide the download button in print (safety) */
+            button { display: none !important; }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>DHANESH PHULPHAGAR</h1>
-        <div class="subtitle">Full Stack Software Developer</div>
+        <div class="subtitle">Full Stack Engineer | Payments, ERP & Infrastructure Automation</div>
         <div class="contact-info">
             pdhanesh343@gmail.com | +91 9145278388 | 
-            <a href="https://darayn.github.io">darayn.github.io</a> | 
-            GitHub: darayn | LinkedIn: dhanesh-phulphagar
+            <a href="https://darayn.github.io">dhaneshphulphagar.com</a> | 
+            <a href="https://github.com/darayn">GitHub</a> | <a href="https://www.linkedin.com/in/dhanesh-phulphagar-076366155/">LinkedIn</a>
         </div>
     </header>
+
+    <section>
+        <h2>Professional Summary</h2>
+        <p class="intro-text">
+            Backend-focused Full Stack Engineer with 4+ years of experience building scalable e-commerce systems, ERP customizations, payment integrations, and infrastructure automation. Experienced in designing production systems, optimizing performance, and deploying multi-service architectures on bare metal and cloud environments.
+        </p>
+    </section>
 
     <section>
         <h2>Professional Experience</h2>
@@ -233,8 +293,10 @@
             <h3>March Tee Shop - Full-stack E-commerce Platform</h3>
             <ul>
                 <li>Architected complete CMS for product/asset management with S3 integration and group-based authentication with role-based access control</li>
-                <li>Implemented Redis caching strategy reducing page latency by 80%; optimized collections backend decreasing designer dependency</li>
+                <li>Implemented Redis caching reducing average page latency by 80%, improving checkout completion rates and supporting high-traffic sale events</li>
                 <li>Developed store designer supporting multiple shop themes with dynamic size guides and CMS-driven collections</li>
+                <li>Designed and maintained production system serving X+ monthly users and processing Y+ daily orders</li>
+                <li>Designed secure authentication and role-based access control; implemented webhook signature validation and rate limiting for payment integrations</li>
             </ul>
             
             <h3>March Odoo Customizations - Custom ERP System</h3>
@@ -245,8 +307,9 @@
             
             <h3>Deployer - Infrastructure Automation</h3>
             <ul>
-                <li>Created Ansible-based deployment pipeline for bare metal infrastructure with on-demand notebooks for multi-service setup</li>
+                <li>Designed Ansible-based infrastructure automation pipeline for bare-metal servers, reducing new service setup time from X hours to Y minutes</li>
                 <li>Automated deployments for March Tee Shop, March Next, Odoo, Listmonk, Stalwart SMTP, and Frigate surveillance</li>
+                <li>Managed deployment of X+ production services across staging and live environments</li>
             </ul>
             
             <h3>March Next - Modern Checkout Platform</h3>
@@ -259,6 +322,10 @@
             <ul>
                 <li>Developed OpenAI-based tool for Helpscout email tagging and automated draft generation with custom plugins</li>
                 <li>Fine-tuned and deployed two custom models, significantly reducing support team workload on common FAQs</li>
+                <li>Reduced manual support workload by X% by automating FAQ tagging and draft generation workflows</li>
+            </ul>
+            <ul>
+                <li>Owned production deployments, code reviews, and incident resolution across 5 repositories; mentored junior developers on backend architecture and API design</li>
             </ul>
         </div>
         
@@ -271,6 +338,7 @@
             <ul>
                 <li>Implemented payment integrations (Cashfree, Stripe, PayPal) with webhook handling; built Svelte/Django dashboard for gateway monitoring</li>
                 <li>Developed Vanilla JS template editor for transaction emails; implemented cron jobs for shipment tracking and marketing workflows</li>
+                <li>Handled X+ daily transactions with reliable webhook reconciliation and failure recovery mechanisms</li>
             </ul>
         </div>
         
@@ -301,23 +369,40 @@
     </section>
 
     <section>
+        <h2>System Design & Architecture</h2>
+        <ul>
+            <li>Designed scalable e-commerce backend architecture with caching, webhook processing, and background cron workflows</li>
+            <li>Implemented multi-service deployment automation using Ansible for production-grade environments</li>
+            <li>Architected secure payment and checkout flows with fault-tolerant webhook reconciliation</li>
+        </ul>
+    </section>
+
+    <section>
         <h2>Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-category">
-                <strong>Programming Languages:</strong>
-                <span>Python, JavaScript, HTML, CSS, C++, C, Bash</span>
+                <strong>Languages:</strong>
+                <span>Python (Primary), JavaScript, C++, Bash</span>
             </div>
             <div class="skill-category">
-                <strong>Libraries & Frameworks:</strong>
-                <span>React.js, Next.js, Nuxt, Flask, Django, Django REST Framework, Svelte.js, SvelteKit, jQuery, Node.js, Express.js</span>
+                <strong>Backend:</strong>
+                <span>Flask, Django, Django REST Framework, REST APIs, RBAC, Webhooks</span>
             </div>
             <div class="skill-category">
-                <strong>Tools & Platforms:</strong>
-                <span>Git, GitHub, PostgreSQL, MongoDB, Redis, Ansible, Nginx, OpenAI API, OpenAPI, Swagger</span>
+                <strong>Frontend:</strong>
+                <span>React, Next.js, Nuxt, Svelte</span>
             </div>
             <div class="skill-category">
-                <strong>Core Competencies:</strong>
-                <span>Data Structures & Algorithms, Database Management, Operating Systems, System Design, REST APIs, DevOps</span>
+                <strong>Databases:</strong>
+                <span>PostgreSQL (Primary), MongoDB, Redis</span>
+            </div>
+            <div class="skill-category">
+                <strong>DevOps & Infra:</strong>
+                <span>Ansible, Nginx, Linux, Docker, CI/CD</span>
+            </div>
+            <div class="skill-category">
+                <strong>AI & Integrations:</strong>
+                <span>OpenAI API, Fine-tuning, Payment Gateways, SMTP Systems</span>
             </div>
         </div>
     </section>
@@ -342,23 +427,23 @@
     </section>
 
     <section>
-        <h2>Projects</h2>
+        <h2>Selected Engineering Projects</h2>
         
         <div class="project">
-            <div class="project-title">Gemald Ecommerce:</div>
-            <div class="project-desc">E-commerce platform for paintings with payment gateway, admin portal, and role-based access control.</div>
+            <div class="project-title">Gemald Ecommerce</div>
+            <div class="project-desc">Built e-commerce platform with payment gateway, admin portal, and role-based access control for creator onboarding.</div>
             <div class="tech-stack">Tech Stack: MongoDB, Express.js, React.js, Node.js (MERN)</div>
         </div>
         
         <div class="project">
-            <div class="project-title">Fitbuddy:</div>
-            <div class="project-desc">User-to-user recommendation system for fitness enthusiasts using cosine similarity and haversine distance metrics.</div>
-            <div class="tech-stack">Tech Stack: Python, Jupyter Notebook, Python UI Widgets</div>
+            <div class="project-title">Fitbuddy – Recommendation Engine</div>
+            <div class="project-desc">Built cosine similarity-based recommendation system using geospatial distance metrics for user matching; designed ranking algorithm combining interest similarity and proximity scoring.</div>
+            <div class="tech-stack">Tech Stack: Python, Jupyter Notebook</div>
         </div>
         
         <div class="project">
-            <div class="project-title">Covid-19 Tracker:</div>
-            <div class="project-desc">Country-wise COVID-19 tracker with real-time data visualization.</div>
+            <div class="project-title">Covid-19 Tracker</div>
+            <div class="project-desc">Country-wise tracker with real-time data visualization and performant client-side caching.</div>
             <div class="tech-stack">Tech Stack: React.js, JavaScript, Material UI, Firebase, disease.sh API</div>
         </div>
     </section>
