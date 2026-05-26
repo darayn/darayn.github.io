@@ -1,0 +1,213 @@
+%-------------------------
+% Resume in LaTeX
+% Author : Dhanesh Phulphagar
+% Based on: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Repository section command
+\newcommand{\resumeRepoHeading}[2]{
+    \vspace{2pt}
+    \item[]
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \colorbox{black!10}{\parbox{0.97\textwidth}{\textbf{#1} \hfill \textit{\small #2}}}
+    \end{tabular*}\vspace{-3pt}
+}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Dhanesh Phulphagar} \\ \vspace{1pt}
+    \small \textbf{Full-Stack Software Engineer} \\ \vspace{3pt}
+    \small +91-9145278388 $|$ \href{mailto:pdhanesh343@gmail.com}{\underline{pdhanesh343@gmail.com}} $|$ 
+    \href{https://darayn.github.io}{\underline{darayn.github.io}} $|$
+    \href{https://github.com/darayn}{\underline{github.com/darayn}} $|$
+    \href{https://linkedin.com/in/dhanesh-phulphagar}{\underline{linkedin.com/in/dhanesh-phulphagar}}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Sole Software Engineer}{Sept 2023 -- Present}
+      {March Work Private Limited (Marchtee.com)}{Pune, India}
+      \vspace{2pt}
+      \small{Solo technical owner maintaining 4 production repositories for e-commerce t-shirt brand}
+      
+      \resumeRepoHeading{March Shop (Python/Flask/PostgreSQL)}{Core Maintainer + Contributor}
+      \resumeItemListStart
+        \resumeItem{Inherited legacy monolith with no auth/CMS/OMS; rebuilt authentication system from scratch with RBAC, multi-device sessions, WebAuthn, OAuth, passwordless OTP}
+        \resumeItem{Migrated entire CMS from codebase to database: navigations, collections, metadata, metrology, size guides, static assets to R2/S3}
+        \resumeItem{Built single-page shop theme with custom grids and collections, engineered checkout API with US localization, saved addresses, tokenized cards}
+        \resumeItem{Optimized PostgreSQL full-text search using vectors, built payment gateway success rate dashboard reducing queries significantly}
+        \resumeItem{Developed reverse pickup mail notification cron, post-order workflows (COD detection, address similarity, fraud flagging, fake address detection)}
+        \resumeItem{Built returns/exchange reconciliation engine with discount considerations, shop size pickers, and backend analytics with design team}
+      \resumeItemListEnd
+      
+      \resumeRepoHeading{March Next (Nuxt.js/Vue)}{Core Maintainer + Contributor}
+      \resumeItemListStart
+        \resumeItem{Built frontend for checkout and public login achieving 90\% reduction in checkout time, earning recognition from brands across ecosystem}
+        \resumeItem{Developed guest and authenticated checkout with UPI, saved cards, seamless Cashfree, CCAvenue net banking, cookie-based Pinia persistence}
+        \resumeItem{Setup PM2 logging for production monitoring, error tracking, and debugging in initial rollout phase}
+      \resumeItemListEnd
+      
+      \resumeRepoHeading{Odoo Brand (Python/Odoo)}{Core Maintainer}
+      \resumeItemListStart
+        \resumeItem{Own and maintain custom ERP layer managing addresses, invoicing, inventory, financial reporting, delivery notes, stock lots, purchase and manufacturing}
+        \resumeItem{Built 10+ internal models for daily operations: exchange, return, splits, shipping service management, hangtag labels, stock labels, delivery labels}
+      \resumeItemListEnd
+      
+      \resumeRepoHeading{Deployer (Ansible/Bash)}{Core Maintainer + Contributor}
+      \resumeItemListStart
+        \resumeItem{Retired legacy Fabric deployer, built Ansible-based CI/CD supporting hard deployments and on-demand releases for all repositories}
+        \resumeItem{Implemented fail2ban rate limiting on standalone servers, setup tooling for Listmonk (self-hosted email marketing)}
+        \resumeItem{Deployed Frigate self-hosted surveillance for warehouse analytics with Google Drive backups across 3 locations via single command}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Programmer Analyst - ServiceNow Developer}{Feb 2021 -- June 2022}
+      {Cognizant}{India}
+      \resumeItemListStart
+        \resumeItem{Developed Vaccination Survey using ServiceNow/REST integrated with COWIN API, collaborated with Walmart on mainframe migrations}
+        \resumeItem{Achieved ServiceNow Certified System Administrator and Application Developer certifications}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Research Intern}{Jan 2020 -- April 2020}
+      {CDAC}{Pune, India}
+      \resumeItemListStart
+        \resumeItem{Reimplemented Mozilla's TTS for Odia language with data preprocessing, implemented DeepMind's WaveRNN in PyTorch as vocoder}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, JavaScript, TypeScript, SQL, C++, HTML/CSS} \\
+     \textbf{Frontend}{: React, Next.js, Nuxt.js, Svelte, SvelteKit, jQuery} \\
+     \textbf{Backend}{: Django, Flask, Django REST Framework, Node.js, Express.js, Odoo} \\
+     \textbf{Databases}{: PostgreSQL (vectors, full-text search), MongoDB} \\
+     \textbf{DevOps}{: Ansible, PM2, Fail2ban, Git, AWS S3, Cloudflare R2} \\
+     \textbf{APIs \& Integration}{: REST, OAuth, WebAuthn, Payment Gateways (Cashfree, CCAvenue), OpenAI API}
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Pune University}{Pune, India}
+      {Bachelor of Engineering in Information Technology}{2017 -- 2021}
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Notable Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Gemald E-commerce} $|$ \emph{MongoDB, Express.js, React, Node.js}}{}
+          \resumeItemListStart
+            \resumeItem{E-commerce platform for paintings with payment gateway integration, admin portal, and role-based access control}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{FitBuddy} $|$ \emph{Python, Jupyter Notebook}}{}
+          \resumeItemListStart
+            \resumeItem{User-to-user recommendation system for fitness enthusiasts using cosine similarity and haversine distance across 5-10 metrics}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{COVID-19 Tracker} $|$ \emph{React, Material-UI, Firebase}}{}
+          \resumeItemListStart
+            \resumeItem{Country-wise COVID-19 tracking application with disease.sh API integration}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
