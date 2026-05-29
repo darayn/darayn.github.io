@@ -3,389 +3,175 @@
 <head>
 <meta charset="UTF-8"/>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
-
-  :root {
-    --bg:    #F5F4F0;
-    --ink:   #111111;
-    --ink2:  #333330;
-    --muted: #888880;
-    --rule:  #C8C7C2;
-  }
+  @page { size: A4; margin: 8mm 11mm 8mm 11mm; }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  @page { size: A4; margin: 0; }
 
   html, body {
-    width: 210mm;
-    height: 297mm;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 8.8pt;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    width: 188mm;
+    background: #ffffff;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    line-height: 1.32;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
-  .page {
-    width: 210mm;
-    height: 297mm;
-    padding: 8mm 14mm 11mm 14mm;
-    display: flex;
-    flex-direction: column;
-  }
+  .name { font-size: 15pt; font-weight: bold; margin-bottom: 1.5pt; }
+  .tagline { font-size: 9pt; margin-bottom: 2.5pt; }
+  .contact { font-size: 8pt; color: #333; margin-bottom: 6pt; line-height: 1.4; }
+  .contact span { margin-right: 10pt; display: inline-block; }
 
-  /* HEADER */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding-bottom: 8pt;
-    border-bottom: 1.2px solid var(--rule);
-    margin-bottom: 11pt;
-  }
-  .header-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 24pt;
-    line-height: 0.9;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-  .header-name em { font-style: italic; }
-  .header-right {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5pt;
-    padding-bottom: 2pt;
-  }
-  .header-right span, .header-right a {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 7.2pt;
-    color: var(--muted);
-    text-decoration: none;
-    display: block;
-  }
-  .header-right .title { color: var(--ink2); font-size: 7.8pt; margin-bottom: 1.5pt; }
-
-  /* BODY */
-  .body {
-    display: grid;
-    grid-template-columns: 122pt 1fr;
-    gap: 0 18pt;
-    flex: 1;
-  }
-
-  .col-left {
-    display: flex;
-    flex-direction: column;
-    gap: 11pt;
-    border-right: 1px solid var(--rule);
-    padding-right: 15pt;
-  }
-  .col-right {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* SECTION LABEL */
-  .section-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 6.5pt;
-    color: var(--muted);
-    letter-spacing: 0.12em;
+  .section-title {
+    font-size: 9pt;
+    font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 4pt;
+    letter-spacing: 0.05em;
+    margin: 5pt 0 2.5pt 0;
+    border-bottom: 0.7px solid #aaa;
+    padding-bottom: 1pt;
   }
 
-  /* ABOUT */
-  .about-text {
-    font-size: 8.2pt;
-    font-weight: 300;
-    color: var(--ink2);
-    line-height: 1.6;
-  }
+  .summary { font-size: 8.5pt; line-height: 1.4; margin-bottom: 1pt; }
 
-  /* SKILLS */
-  .skills-block { display: flex; flex-direction: column; gap: 4pt; }
-  .skill-row { display: flex; flex-direction: column; gap: 1pt; }
-  .skill-cat {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 6.2pt;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-  .skill-vals {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 7.2pt;
-    color: var(--ink2);
-    line-height: 1.45;
-  }
+  .job { margin-bottom: 4.5pt; }
+  .job-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-company { font-weight: bold; font-size: 9pt; }
+  .job-date { font-size: 8pt; color: #444; }
+  .job-title { font-size: 8pt; color: #333; margin-bottom: 2pt; }
 
-  /* EDUCATION */
-  .edu-name { font-size: 8.8pt; font-weight: 500; color: var(--ink); }
-  .edu-sub {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 6.8pt;
-    color: var(--muted);
-    margin-top: 2pt;
-    line-height: 1.55;
-  }
+  .repo-name { font-size: 8.5pt; font-weight: bold; margin: 3pt 0 1pt 0; }
+  .repo-stack { font-size: 7.5pt; color: #555; }
 
-  /* CERTS */
-  .cert-item {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 7.2pt;
-    color: var(--ink2);
-    padding-left: 9pt;
-    position: relative;
-    line-height: 1.55;
-  }
-  .cert-item::before { content: '—'; position: absolute; left: 0; color: var(--muted); }
+  ul { padding-left: 13pt; margin: 1.5pt 0 1.5pt 0; }
+  ul li { font-size: 8.5pt; line-height: 1.35; margin-bottom: 0.8pt; list-style-type: disc; }
 
-  /* EXPERIENCE */
-  .exp-entry { margin-bottom: 5pt; }
-  .exp-entry:last-child { margin-bottom: 0; }
-  .exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 1pt;
-  }
-  .exp-company { font-size: 9.5pt; font-weight: 500; color: var(--ink); }
-  .exp-date { font-family: 'IBM Plex Mono', monospace; font-size: 6.8pt; color: var(--muted); }
-  .exp-role { font-family: 'IBM Plex Mono', monospace; font-size: 7.2pt; color: var(--muted); margin-bottom: 3pt; }
+  .skills-table { width: 100%; border-collapse: collapse; margin-top: 1pt; table-layout: fixed; }
+  .skills-table td { font-size: 8.5pt; padding: 1pt 5pt 1pt 0; vertical-align: top; word-wrap: break-word; }
+  .skills-table td:first-child { font-weight: bold; white-space: nowrap; width: 76pt; color: #333; }
+  .skills-table td:last-child { width: auto; }
 
-  /* REPO GROUPS */
-  .repo-group { margin-top: 2.5pt; }
-  .repo-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 7.2pt;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 1.5pt;
-    display: flex;
-    align-items: baseline;
-    gap: 6pt;
-  }
-  .repo-stack-small {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 6.2pt;
-    color: var(--muted);
-    font-weight: 400;
-  }
+  .project { margin-bottom: 4pt; }
+  .project-name { font-weight: bold; font-size: 9pt; }
+  .project-meta { font-size: 7.5pt; color: #555; margin-bottom: 1.5pt; }
 
-  /* BULLETS */
-  ul.bullets { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1pt; }
-  ul.bullets li {
-    font-size: 7.8pt;
-    font-weight: 300;
-    color: var(--ink2);
-    line-height: 1.42;
-    padding-left: 10pt;
-    position: relative;
-  }
-  ul.bullets li::before { content: '—'; position: absolute; left: 0; color: var(--muted); font-size: 7.5pt; }
-
-  /* PROJECTS */
-  .projects-section { margin-top: 5pt; padding-top: 5pt; border-top: 1px solid var(--rule); }
-  .project-entry { margin-bottom: 5pt; }
-  .project-entry:last-child { margin-bottom: 0; }
-  .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 0.5pt;
-  }
-  .project-name { font-size: 9pt; font-weight: 500; color: var(--ink); }
-  .project-url { font-family: 'IBM Plex Mono', monospace; font-size: 6.5pt; color: var(--muted); text-decoration: none; }
-  .project-stack { font-family: 'IBM Plex Mono', monospace; font-size: 6.8pt; color: var(--muted); margin-bottom: 2pt; }
-
-  .divider { border: none; border-top: 1px solid var(--rule); margin: 4pt 0; }
+  .edu-school { font-weight: bold; font-size: 9pt; }
+  .edu-degree { font-size: 8.5pt; color: #333; }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="header-name">Dhanesh <em>Phulphagar</em></div>
-    <div class="header-right">
-      <span class="title">Full-Stack Software Engineer · Pune, India</span>
-      <a href="mailto:dhaneshacad@gmail.com">dhaneshacad@gmail.com</a>
-      <a href="https://github.com/darayn">github.com/darayn</a>
-      <a href="https://www.linkedin.com/in/dhanesh-phulphagar-076366155/">linkedin/dhanesh-phulphagar</a>
-      <a href="https://dhaneshphulphagar.com">dhaneshphulphagar.com</a>
-    </div>
+  <div class="name">Dhanesh Phulphagar</div>
+  <div class="tagline">Full-Stack Software Engineer(<span>Pune, India</span>)</div>
+  <div class="contact">
+    <span><a href="mailto:dhaneshacad@gmail.com" target="_blank">dhaneshacad@gmail.com</a></span>
+    <span><a href="https://github.com/darayn" target="_blank">github.com/darayn</a></span>
+    <span><a href="https://www.linkedin.com/in/dhanesh-phulphagar-076366155/" target="_blank">linkedin.com/in/dhanesh-phulphagar</a></span>
+    <span><a href="https://dhaneshphulphagar.com" target="_blank">dhaneshphulphagar.com</a></span>
   </div>
 
-  <div class="body">
+  <div class="section-title">Summary</div>
+  <p class="summary">Full-Stack Software Engineer with 4+ years building production systems in Python, JavaScript, and TypeScript. Core contributor across five repos at a D2C e-commerce brand — backend, checkout, ERP, CI/CD, and LLM tooling. Strong in database design, payment integrations, and full-cycle feature ownership.</p>
 
-    <!-- LEFT -->
-    <div class="col-left">
+  <div class="section-title">Technical Skills</div>
+  <table class="skills-table">
+    <tr><td>Languages</td><td>Python, JavaScript, TypeScript, SQL, C++, HTML/CSS</td></tr>
+    <tr><td>Frontend</td><td>Nuxt.js, Vue.js, React, Next.js, Svelte, Tailwind CSS, shadcn/ui</td></tr>
+    <tr><td>Backend</td><td>Flask, Django, DRF, FastAPI, Node.js, Express.js, Odoo</td></tr>
+    <tr><td>Databases</td><td>PostgreSQL (vectors, full-text search), MongoDB, Redis, Supabase</td></tr>
+    <tr><td>DevOps</td><td>Ansible, PM2, Git, AWS S3, Cloudflare R2, Vercel, Fail2ban</td></tr>
+    <tr><td>Integrations</td><td>REST, OAuth 2.0, WebAuthn, Stripe, Cashfree, CCAvenue, OpenAI API</td></tr>
+  </table>
 
-      <div>
-        <div class="section-label">about</div>
-        <div class="about-text">Core contributor across five production repositories at Marchtee.com since 2022 — backend, checkout, ERP, infrastructure, and AI tooling. Previously ServiceNow developer at Cognizant and research intern at CDAC on TTS for low-resource Indian languages. Building things that are fast, honest, and well-made.</div>
-      </div>
+  <div class="section-title">Professional Experience</div>
 
-      <div>
-        <div class="section-label">skills</div>
-        <div class="skills-block">
-          <div class="skill-row">
-            <span class="skill-cat">languages</span>
-            <span class="skill-vals">Python, JavaScript, TypeScript, SQL, C++</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-cat">frontend</span>
-            <span class="skill-vals">Nuxt.js, React, Next.js, Svelte, Vue</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-cat">backend</span>
-            <span class="skill-vals">Flask, Django, FastAPI, Node.js, Odoo</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-cat">data</span>
-            <span class="skill-vals">PostgreSQL (vectors, FTS), MongoDB, Redis</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-cat">ops</span>
-            <span class="skill-vals">Ansible, PM2, Fail2ban, Git, S3, Cloudflare R2</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-cat">integrations</span>
-            <span class="skill-vals">REST, OAuth, WebAuthn, Stripe, Cashfree, OpenAI</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="section-label">education</div>
-        <div class="edu-name">Pune University</div>
-        <div class="edu-sub">B.E. Information Technology<br/>2017 — 2021</div>
-      </div>
-
-      
-
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">Marchtee.com</span>
+      <span class="job-date">2022 – Present</span>
     </div>
+    <div class="job-title">Core Contributor, Full-Stack Engineer — 5 Repositories</div>
 
-    <!-- RIGHT -->
-    <div class="col-right">
+    <div class="repo-name">march-shop <span style="font-weight:normal;font-size:7.5pt;color:#555;">Flask · SQLAlchemy · PostgreSQL · Redis</span></div>
+    <ul>
+      <li>Rebuilt auth from scratch — RBAC, multi-device sessions, WebAuthn, OAuth 2.0, passwordless OTP; migrated CMS to database, assets to Cloudflare R2/S3</li>
+      <li>Redis caching with namespace isolation; PostgreSQL full-text search via tsvectors; payment gateway dashboard; post-order automation (COD, fraud, address validation); returns reconciliation engine; 50% faster page loads via optimized collections and query batching</li>
+    </ul>
 
-      <div>
-        <div class="section-label">experience</div>
+    <div class="repo-name">march-next <span style="font-weight:normal;font-size:7.5pt;color:#555;">Nuxt.js · Vue · Pinia · PM2</span></div>
+    <ul>
+      <li>Single-page checkout — guest and authenticated flows, UPI, saved cards, Cashfree, CCAvenue, Pinia state persistence; 90% faster checkout, up to 40% conversion lift</li>
+      <li>Scaled to 7+ countries with full localization (currency, tax, language); integrated DHL, Aramex, India Post, ATC; 25% increase in international orders</li>
+    </ul>
 
-        <!-- MARCHTEE -->
-        <div class="exp-entry">
-          <div class="exp-header">
-            <span class="exp-company">Marchtee.com</span>
-            <span class="exp-date">2022 — present</span>
-          </div>
-          <div class="exp-role">Core Contributor · Full-Stack Engineer · 5 repositories</div>
+    <div class="repo-name">march-odoo <span style="font-weight:normal;font-size:7.5pt;color:#555;">Python · Odoo v14 → v16 → v19</span></div>
+    <ul>
+      <li>Led v14 to v16 upgrade (module migration, ORM compatibility, data integrity); 10+ custom models for exchanges, returns, labels, shipping; owns ERP for inventory, invoicing, and reporting</li>
+    </ul>
 
-          <div class="repo-group">
-            <div class="repo-label">march-shop <span class="repo-stack-small">Flask · SQLAlchemy · PostgreSQL · Redis</span></div>
-            <ul class="bullets">
-              <li>Rebuilt auth from scratch — RBAC, multi-device sessions, WebAuthn, OAuth, passwordless OTP</li>
-              <li>Migrated entire CMS to database (navigations, collections, metadata, size guides); assets to Cloudflare R2/S3</li>
-              <li>Redis caching with namespace isolation; PostgreSQL full-text search using tsvector for shop and catalogue</li>
-              <li>Built payment gateway success rate dashboard; post-order workflows for COD detection, fraud flagging, fake address detection; returns and exchange reconciliation engine with discount considerations</li>
-            </ul>
-          </div>
-
-          <div class="repo-group">
-            <div class="repo-label">march-next <span class="repo-stack-small">Nuxt.js · Vue · Pinia · PM2</span></div>
-            <ul class="bullets">
-              <li>Single-page checkout — guest + authenticated flows, UPI, saved cards, Cashfree, CCAvenue net banking, cookie-based Pinia persistence</li>
-              <li>90% reduction in checkout time; up to 40% conversion lift; recognised by brands across the ecosystem</li>
-              <li>International checkout with localisation for 7+ countries; integrations with India Post, DHL, Aramex, ATC</li>
-            </ul>
-          </div>
-
-          <div class="repo-group">
-            <div class="repo-label">march-odoo <span class="repo-stack-small">Python · Odoo v14 → v16 → v19</span></div>
-            <ul class="bullets">
-              <li>Led v14 → v16 upgrade — custom module migration, ORM compatibility, data integrity across all models</li>
-              <li>Built 10+ internal models: exchanges, returns, splits, shipping service management, hangtag/stock/delivery labels</li>
-              <li>Owns ERP layer for inventory, invoicing, financial reporting, purchase, and manufacturing workflows</li>
-            </ul>
-          </div>
-
-          <div class="repo-group">
-            <div class="repo-label">march-deployer <span class="repo-stack-small">Ansible · Bash · Frigate · Listmonk</span></div>
-            <ul class="bullets">
-              <li>Replaced legacy Fabric deployer with Ansible CI/CD — hard and soft deployments for shop, checkout, and Odoo</li>
-              <li>Deployed Frigate self-hosted warehouse surveillance with Drive backups across 3 locations via single command</li>
-            </ul>
-          </div>
-
-          <div class="repo-group">
-            <div class="repo-label">kavinath <span class="repo-stack-small">FastAPI · Python · LLM</span></div>
-            <ul class="bullets">
-              <li>LLM-powered internal ops assistant (FastAPI backend); expanding with tool use and RAG over internal docs</li>
-            </ul>
-          </div>
-        </div>
-
-        <hr class="divider"/>
-
-        <div class="exp-entry">
-          <div class="exp-header">
-            <span class="exp-company">Cognizant</span>
-            <span class="exp-date">Feb 2021 — Jun 2022</span>
-          </div>
-          <div class="exp-role">Programmer Analyst — ServiceNow Developer</div>
-          <ul class="bullets">
-            <li>ServiceNow development and REST integrations; collaborated with Walmart on mainframe migrations</li>
-            <li>Built Vaccination Survey integrated with COWIN API; ServiceNow CSA + CAD certified</li>
-          </ul>
-        </div>
-
-        <hr class="divider"/>
-
-        <div class="exp-entry">
-          <div class="exp-header">
-            <span class="exp-company">CDAC</span>
-            <span class="exp-date">Jan — Apr 2020</span>
-          </div>
-          <div class="exp-role">Research Intern</div>
-          <ul class="bullets">
-            <li>Reimplemented Mozilla TTS for Odia language with data preprocessing; DeepMind WaveRNN in PyTorch as vocoder</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- PROJECTS -->
-      <div class="projects-section">
-        <div class="section-label">projects</div>
-
-        <div class="project-entry">
-          <div class="project-header">
-            <span class="project-name">Foodcription</span>
-            <a class="project-url" href="https://foodcription.com">foodcription.com</a>
-          </div>
-          <div class="project-stack">Next.js · TypeScript · Supabase · PostgreSQL · Stripe · Razorpay · Vercel · Tailwind · shadcn</div>
-          <ul class="bullets">
-            <li>Subscription food ordering platform — sole engineer owning auth, data model, ordering, payments, and release</li>
-            <li>Designed core schema for subscriptions, plans, schedules, coupons, and payment states with full auditability</li>
-            <li>Stripe + Razorpay webhooks with idempotent order creation and failure recovery; 100+ orders shipped in first 30 days</li>
-          </ul>
-        </div>
-
-
-        <div class="project-entry">
-          <div class="project-name">FitBuddy</div>
-          <div class="project-stack">Python · Jupyter Notebook</div>
-          <ul class="bullets">
-            <li>User-to-user recommendation system using cosine similarity and haversine distance across 5–10 fitness metrics</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
+    <div class="repo-name">march-deployer + kavinath <span style="font-weight:normal;font-size:7.5pt;color:#555;">Ansible · Frigate · FastAPI · LLM</span></div>
+    <ul>
+      <li>Ansible CI/CD replacing Fabric; handles 10+ on-demand deployments daily; hard deployments to bare metal with zero-downtime rolling updates</li>
+      <li>Frigate self-hosted warehouse surveillance across 3 locations with Drive backups via single command; LLM-powered internal ops assistant with FastAPI backend</li>
+    </ul>
   </div>
-</div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">Cognizant</span>
+      <span class="job-date">February 2021 – June 2022</span>
+    </div>
+    <div class="job-title">Programmer Analyst — ServiceNow Developer</div>
+    <ul>
+      <li>ServiceNow development, REST integrations, Walmart mainframe migration collaboration; built COWIN-integrated Vaccination Survey; ServiceNow CSA + CAD certified</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-header">
+      <span class="job-company">CDAC</span>
+      <span class="job-date">January – April 2020</span>
+    </div>
+    <div class="job-title">Research Intern — Text-to-Speech</div>
+    <ul>
+      <li>Reimplemented Mozilla TTS for Odia language; implemented DeepMind WaveRNN in PyTorch as neural vocoder</li>
+    </ul>
+  </div>
+
+  <div class="section-title">Projects</div>
+
+  <div class="project">
+    <span class="project-name">Foodcription</span>
+    <div class="project-meta">Next.js · TypeScript · Supabase · PostgreSQL · Stripe · Razorpay · Vercel · Tailwind · shadcn — foodcription.com</div>
+    <ul>
+      <li>Sole engineer on a subscription food ordering platform — auth, data modelling, ordering, payments, and production release</li>
+      <li>Zero-downtime reversible migrations (feature flags, dual-write, auto-snapshot rollback); Stripe + Razorpay with idempotent order creation; 100+ orders in first 30 days</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <span class="project-name">Gemald</span> <span style="font-size:8pt;color:#555;">— MongoDB · Express · React · Node.js</span>
+    <ul>
+      <li>Full-stack e-commerce platform for paintings with payment gateway, admin portal, and role-based access control</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <span class="project-name">FitBuddy</span> <span style="font-size:8pt;color:#555;">— Python · Jupyter Notebook</span>
+    <ul>
+      <li>User recommendation system using cosine similarity and haversine distance across 5–10 fitness metrics</li>
+    </ul>
+  </div>
+
+  <div class="section-title">Education</div>
+  <div class="edu-school">Savitribai Phule Pune University</div>
+  <div class="edu-degree">Bachelor of Engineering in Information Technology, 2017 – 2021</div>
+
+  <div class="section-title">Certifications</div>
+  <ul>
+    <li>ServiceNow Certified System Administrator (CSA) &nbsp;&nbsp; ServiceNow Certified Application Developer (CAD)</li>
+  </ul>
+
 </body>
 </html>

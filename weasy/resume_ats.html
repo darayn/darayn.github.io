@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<style>
+  /* ATS mode: system fonts only, 2 sizes, single-column */
+
+  :root {
+    --bg:    #F5F4F0;
+    --ink:   #111111;
+    --ink2:  #333330;
+    --muted: #666660;
+    --rule:  #C8C7C2;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  @page { size: A4; margin: 0; }
+
+  html, body {
+    width: 210mm;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .page {
+    width: 210mm;
+    padding: 12mm 16mm 14mm 16mm;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 8pt;
+    border-bottom: 1.5px solid var(--rule);
+    margin-bottom: 12pt;
+  }
+  .header-left { display: flex; flex-direction: column; gap: 3pt; }
+  .header-name {
+    font-size: 20pt;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .header-title {
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--ink2);
+  }
+  .header-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 3pt;
+    padding-top: 2pt;
+  }
+  .header-right a, .header-right span {
+    font-size: 11pt;
+    color: var(--muted);
+    text-decoration: none;
+    display: block;
+  }
+
+  /* SECTIONS */
+  .section { margin-bottom: 14pt; }
+  .section-label {
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2pt;
+    margin-bottom: 7pt;
+  }
+
+  /* SUMMARY */
+  .about-text { color: var(--ink2); }
+
+  /* TECHNICAL SKILLS */
+  .skills-block { display: flex; flex-direction: column; gap: 4pt; }
+  .skill-row { display: flex; gap: 6pt; }
+  .skill-cat { font-weight: 700; color: var(--ink); min-width: 90pt; }
+  .skill-vals { color: var(--ink2); }
+
+  /* EXPERIENCE */
+  .exp-entry { margin-bottom: 10pt; }
+  .exp-entry:last-child { margin-bottom: 0; }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1pt;
+  }
+  .exp-role { font-size: 13pt; font-weight: 700; color: var(--ink); }
+  .exp-date { font-size: 11pt; color: var(--muted); }
+  .exp-company { color: var(--ink2); margin-bottom: 5pt; }
+
+  /* REPO GROUPS */
+  .repo-group { margin-bottom: 5pt; }
+  .repo-group:last-child { margin-bottom: 0; }
+  .repo-label { font-weight: 700; color: var(--ink); margin-bottom: 2pt; }
+  .repo-stack-small { font-weight: 400; color: var(--muted); }
+
+  /* BULLETS */
+  ul.bullets { list-style: disc; padding-left: 16pt; margin: 0; }
+  ul.bullets li {
+    color: var(--ink2);
+    line-height: 1.45;
+    margin-bottom: 2pt;
+  }
+
+  /* PROJECTS */
+  .project-entry { margin-bottom: 9pt; }
+  .project-entry:last-child { margin-bottom: 0; }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1pt;
+  }
+  .project-name { font-size: 13pt; font-weight: 700; color: var(--ink); }
+  .project-url { font-size: 11pt; color: var(--muted); text-decoration: none; }
+  .project-stack { color: var(--muted); margin-bottom: 3pt; }
+
+  /* EDUCATION */
+  .edu-name { font-size: 13pt; font-weight: 700; color: var(--ink); }
+  .edu-sub { color: var(--ink2); margin-top: 2pt; }
+
+  /* CERTIFICATIONS */
+  .cert-item { color: var(--ink2); margin-bottom: 2pt; }
+  .cert-item:last-child { margin-bottom: 0; }
+
+  .divider { border: none; border-top: 1px solid var(--rule); margin: 8pt 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-name">Dhanesh Phulphagar</div>
+      <div class="header-title">Full-Stack Engineer | Python | React | Node.js</div>
+    </div>
+    <div class="header-right">
+      <a href="mailto:dhaneshacad@gmail.com">dhaneshacad@gmail.com</a>
+      <a href="https://github.com/darayn">github.com/darayn</a>
+      <a href="https://www.linkedin.com/in/dhanesh-phulphagar-076366155/">linkedin.com/in/dhanesh-phulphagar-076366155</a>
+      <a href="https://dhaneshphulphagar.com">dhaneshphulphagar.com</a>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-label">Summary</div>
+    <div class="about-text">Full-Stack Software Engineer with 4+ years of experience building production-grade web applications using Python, Flask, React, and PostgreSQL. Core contributor across 5 repositories at Marchtee.com, including backend systems, checkout optimization, ERP (Odoo) customization, and LLM tooling. Experienced in DevOps (Ansible, CI/CD), payment integrations (Stripe, Cashfree), and cloud storage (AWS S3, Cloudflare R2).</div>
+  </div>
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section">
+    <div class="section-label">Technical Skills</div>
+    <div class="skills-block">
+      <div class="skill-row">
+        <span class="skill-cat">Languages</span>
+        <span class="skill-vals">Python, JavaScript, TypeScript, SQL, C++</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Frontend</span>
+        <span class="skill-vals">React, Next.js, Nuxt.js, Vue.js, Svelte</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Backend</span>
+        <span class="skill-vals">Flask, Django, FastAPI, Node.js, Odoo ERP</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Databases</span>
+        <span class="skill-vals">PostgreSQL (vectors, full-text search), MongoDB, Redis</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">DevOps</span>
+        <span class="skill-vals">Ansible, CI/CD, AWS S3, Cloudflare, PM2, Git</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Tools &amp; APIs</span>
+        <span class="skill-vals">Stripe, REST APIs, OAuth 2.0, WebAuthn, OpenAI API, Cashfree</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-label">Experience</div>
+
+    <!-- MARCHTEE -->
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Full-Stack Engineer</span>
+        <span class="exp-date">Mar 2022 – Present</span>
+      </div>
+      <div class="exp-company">Marchtee.com — Pune, India</div>
+
+      <div class="repo-group">
+        <div class="repo-label">march-shop <span class="repo-stack-small">Flask · SQLAlchemy · PostgreSQL · Redis</span></div>
+        <ul class="bullets">
+          <li>Rebuilt authentication from scratch — role-based access control (RBAC), multi-device sessions, WebAuthn, OAuth 2.0, and passwordless one-time passwords (OTP).</li>
+          <li>Migrated 5+ CMS modules (navigations, collections, metadata, size guides) to PostgreSQL; moved assets to AWS S3/Cloudflare R2, reducing content update time and increasing reliability.</li>
+          <li>Implemented Redis caching with namespace isolation; added PostgreSQL full-text search (FTS) using tsvector for shop and catalog.</li>
+          <li>Built payment gateway success-rate dashboard; automated post-order workflows for cash-on-delivery (COD) detection, fraud flagging, fake address detection; implemented returns/exchange reconciliation engine with discount considerations.</li>
+        </ul>
+      </div>
+
+      <div class="repo-group">
+        <div class="repo-label">march-next <span class="repo-stack-small">Nuxt.js · Vue.js · Pinia · PM2</span></div>
+        <ul class="bullets">
+          <li>Single-page checkout — guest and authenticated flows, UPI, saved cards, Cashfree, CCAvenue net banking, cookie-based Pinia persistence.</li>
+          <li>Reduced checkout time ~90% and improved conversion up to 40% across brands.</li>
+          <li>International checkout with localisation for 7+ countries; integrations with India Post, DHL, Aramex, ATC.</li>
+        </ul>
+      </div>
+
+      <div class="repo-group">
+        <div class="repo-label">march-odoo <span class="repo-stack-small">Python · Odoo v14 → v16 → v19</span></div>
+        <ul class="bullets">
+          <li>Led v14 → v16 upgrade — custom module migration, ORM compatibility, and data integrity across all models.</li>
+          <li>Built 12+ custom Odoo modules including exchanges, returns, splits, shipping service management, and labeling (hangtag/stock/delivery).</li>
+          <li>Own the ERP layer for inventory, invoicing, financial reporting, purchasing, and manufacturing workflows.</li>
+        </ul>
+      </div>
+
+      <div class="repo-group">
+        <div class="repo-label">march-deployer <span class="repo-stack-small">Ansible · Bash · Frigate · Listmonk</span></div>
+        <ul class="bullets">
+          <li>Replaced legacy Fabric deployer with Ansible CI/CD pipelines — supporting hard and soft deployments for shop, checkout, and Odoo.</li>
+          <li>Deployed Frigate self-hosted warehouse surveillance with Drive backups across 3 locations via single command.</li>
+        </ul>
+      </div>
+
+      <div class="repo-group">
+        <div class="repo-label">kavinath <span class="repo-stack-small">FastAPI · Python · LLM</span></div>
+        <ul class="bullets">
+          <li>LLM-powered internal ops assistant (FastAPI backend); expanding with tool use and retrieval-augmented generation (RAG) over internal docs.</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Programmer Analyst — ServiceNow Developer</span>
+        <span class="exp-date">Feb 2021 – Jun 2022</span>
+      </div>
+      <div class="exp-company">Cognizant — Pune, India</div>
+      <ul class="bullets">
+        <li>ServiceNow development and REST API integrations; collaborated with Walmart on mainframe migrations.</li>
+        <li>Built Vaccination Survey integrated with CoWIN API; achieved ServiceNow Certified System Administrator (CSA) and Certified Application Developer (CAD).</li>
+      </ul>
+    </div>
+
+    <hr class="divider"/>
+
+    <div class="exp-entry">
+      <div class="exp-header">
+        <span class="exp-role">Research Intern</span>
+        <span class="exp-date">Jan 2020 – Apr 2020</span>
+      </div>
+      <div class="exp-company">CDAC — Pune, India</div>
+      <ul class="bullets">
+        <li>Reimplemented Mozilla text-to-speech (TTS) for Odia with data preprocessing; used DeepMind WaveRNN in PyTorch as a vocoder.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-label">Projects</div>
+
+    <div class="project-entry">
+      <div class="project-header">
+        <span class="project-name">Foodcription</span>
+        <a class="project-url" href="https://foodcription.com">foodcription.com</a>
+      </div>
+      <div class="project-stack">Next.js · TypeScript · Supabase · PostgreSQL · Stripe · Razorpay · Vercel · Tailwind · shadcn</div>
+      <ul class="bullets">
+        <li>Subscription food ordering platform — sole engineer owning auth, data model, ordering, payments, and release.</li>
+        <li>Designed core schema for subscriptions, plans, schedules, coupons, and payment states with full auditability.</li>
+        <li>Stripe + Razorpay webhooks with idempotent order creation and failure recovery; 100+ orders shipped in first 30 days.</li>
+      </ul>
+    </div>
+
+    <div class="project-entry">
+      <div class="project-name">FitBuddy</div>
+      <div class="project-stack">Python · Jupyter Notebook</div>
+      <ul class="bullets">
+        <li>User-to-user recommendation system using cosine similarity and haversine distance across 5–10 fitness metrics.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-label">Education</div>
+    <div class="edu-name">Savitribai Phule Pune University (SPPU)</div>
+    <div class="edu-sub">Bachelor of Engineering in Information Technology · 2017 – 2021</div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-label">Certifications</div>
+    <div class="cert-item">ServiceNow Certified System Administrator (CSA)</div>
+    <div class="cert-item">ServiceNow Certified Application Developer (CAD)</div>
+  </div>
+
+</div>
+</body>
+</html>
