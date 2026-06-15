@@ -97,6 +97,7 @@
     <ul>
       <li>Rebuilt auth from scratch — RBAC, multi-device sessions, WebAuthn, OAuth 2.0, passwordless OTP; migrated CMS to database, assets to Cloudflare R2/S3</li>
       <li>Redis caching with namespace isolation; PostgreSQL full-text search via tsvectors; payment gateway dashboard; post-order automation (COD, fraud, address validation); returns reconciliation engine; 50% faster page loads via optimized collections and query batching</li>
+      <li>Built and shipped referral system from scratch — unique referral links, customer redemptions, credit tracking, and tiered rewards; drove measurable increase in new customer acquisition</li>
     </ul>
 
     <div class="repo-name">march-next <span style="font-weight:normal;font-size:7.5pt;color:#555;">Nuxt.js · Vue · Pinia · PM2</span></div>
@@ -112,7 +113,8 @@
 
     <div class="repo-name">march-deployer + kavinath <span style="font-weight:normal;font-size:7.5pt;color:#555;">Ansible · Frigate · FastAPI · LLM</span></div>
     <ul>
-      <li>Ansible CI/CD replacing Fabric; handles 10+ on-demand deployments daily; hard deployments to bare metal with zero-downtime rolling updates</li>
+      <li>Ansible CI/CD replacing Fabric; handles 10+ on-demand deployments daily; bare-metal provisioning and hard deployments with zero-downtime rolling updates; structured logging with logrotate-based rotation across all services</li>
+      <li>Automated PostgreSQL backups to Cloudflare R2 on a scheduled cadence with retention policies; Grafana + Prometheus monitoring stack — dashboards, alerting, and query optimization across app and infra layers</li>
       <li>Frigate self-hosted warehouse surveillance across 3 locations with Drive backups via single command; LLM-powered internal ops assistant with FastAPI backend</li>
     </ul>
   </div>
@@ -167,11 +169,11 @@
   <div class="section-title">Education</div>
   <div class="edu-school">Savitribai Phule Pune University</div>
   <div class="edu-degree">Bachelor of Engineering in Information Technology, 2017 – 2021</div>
-
+<!-- 
   <div class="section-title">Certifications</div>
   <ul>
     <li>ServiceNow Certified System Administrator (CSA) &nbsp;&nbsp; ServiceNow Certified Application Developer (CAD)</li>
-  </ul>
+  </ul> -->
 
 </body>
 </html>
