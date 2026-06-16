@@ -1,0 +1,19 @@
+Dear Hiring Team,
+
+I’m a Full-Stack Software Engineer with 4+ years of experience building and operating production systems across backend infrastructure, frontend applications, payments, ERP workflows, and deployment automation. What excites me most about startups is the ability to work across the stack, solve messy operational problems, and ship meaningful improvements quickly — which is exactly the kind of work I’ve been doing over the last few years.
+
+At marchtee.com, a D2C e-commerce company, I’ve been a core engineering contributor across five repositories covering the storefront, checkout systems, ERP, infrastructure tooling, and internal AI tooling. My work has ranged from rebuilding authentication systems with WebAuthn, OAuth, RBAC, and passwordless flows, to optimizing PostgreSQL search and caching layers, building referral systems, automating post-order operations, and scaling international checkout flows across multiple countries and payment providers.
+
+I enjoy owning features end-to-end — from database design and backend architecture to frontend implementation, deployment, monitoring, and production support. Some of the projects I’m most proud of include building a high-performance single-page checkout flow that significantly improved conversions, implementing zero-downtime deployment pipelines using Ansible, and creating operational tooling that reduced manual overhead for warehouse and support teams.
+
+Alongside production engineering, I’ve also explored applied AI and infrastructure-heavy systems, including FastAPI-based LLM tooling, self-hosted surveillance infrastructure using Frigate, and automated backup and monitoring systems using PostgreSQL, Grafana, Prometheus, and Cloudflare R2.
+
+What I believe I bring to a startup environment is a strong balance of speed and ownership. I’m comfortable working independently, debugging production issues, designing scalable systems, handling migrations safely, and moving quickly without losing focus on maintainability. I genuinely enjoy building products from the ground up and being deeply involved in both technical and operational decision-making.
+
+I’d love the opportunity to contribute to a team that values strong engineering, fast iteration, and product-focused thinking. Thank you for considering my application. I’d be excited to discuss how my experience could contribute to your team and product.
+
+
+
+Best regards,
+Dhanesh Phulphagar
+dhaneshphulphagar.com
