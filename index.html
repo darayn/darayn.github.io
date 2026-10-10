@@ -271,33 +271,41 @@
       padding-top: 4px;
     }
 
-    /* ---- MARCHTEE EXPAND ---- */
-    .expand-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      color: var(--blue);
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      white-space: nowrap;
+    .project-shot {
+      margin-top: 14px;
+      border: 1px solid var(--rule);
+      background: var(--bg2);
+      padding: 12px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 10px;
+      max-width: 520px;
+      min-height: 118px;
     }
-    .expand-btn:hover .expand-label { text-decoration: underline; }
-    .expand-chevron { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); }
-    .expand-btn[aria-expanded="true"] .expand-chevron { transform: rotate(180deg); }
+    .shot-panel {
+      border: 1px solid var(--rule);
+      background: var(--bg);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      justify-content: space-between;
+    }
+    .shot-kpi {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .shot-value { font-size: 20px; font-weight: 500; color: var(--ink); line-height: 1; }
+    .shot-line { height: 5px; background: var(--rule); }
+    .shot-line:nth-child(2n) { width: 72%; }
+    .shot-line:nth-child(3n) { width: 54%; }
 
     .repos-panel {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.55s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease, margin-top 0.3s ease;
-      margin-top: 0;
+      margin-top: 24px;
     }
-    .repos-panel.open { max-height: 3200px; opacity: 1; margin-top: 24px; }
 
     .repo-item { padding: 16px 0; border-top: 1px solid var(--rule); }
     .repo-item:last-child { padding-bottom: 2px; }
@@ -408,6 +416,7 @@
 
       .entry { grid-template-columns: 1fr; gap: 0; }
       .entry-date { order: -1; margin-bottom: 2px; }
+      .project-shot { grid-template-columns: 1fr; }
 
       .now-grid { grid-template-columns: 1fr; gap: 28px 0; }
 
@@ -474,8 +483,8 @@
       <div class="hero-line">engineer.</div>
       <p class="hero-sub">
         Pune, India
-        <!-- <span class="dot"></span>
-        available for work -->
+        <span class="dot"></span>
+        open to relocate: SG / UAE / EU / AU / US
       </p>
     </div>
   </section>
@@ -486,7 +495,10 @@
       <div class="section-label">— about</div>
       <div class="about-text">
         <p>
-          Core contributor at <a href="https://marchtee.com" target="_blank" rel="noopener" class="inline-link">marchtee.com</a> since 2022 — built auth systems, checkout flows, an ERP layer, and CI/CD pipelines from scratch, across five production repositories.
+          Core contributor at <a href="https://marchtee.com" target="_blank" rel="noopener" class="inline-link">marchtee.com</a> since Sep 2022 — built auth systems, checkout flows, an ERP layer, and CI/CD pipelines from scratch, across five production repositories.
+        </p>
+        <p>
+          GTM and growth engineering: checkout, payments, conversion, fraud flagging, reconciliation, international orders, and revenue-side automation.
         </p>
         <p>
           Previously a ServiceNow developer at Cognizant, and a research intern at CDAC working on TTS for low-resource Indian languages.
@@ -533,26 +545,20 @@
       <div class="section-label">— experience</div>
       <div class="entries">
 
-        <!-- MARCHTEE expandable -->
+        <!-- MARCHTEE -->
         <div class="entry" id="marchtee-entry" style="display:block; padding:22px 0;">
           <div class="marchtee-top" style="display:grid; grid-template-columns:1fr auto; gap:0 32px; align-items:start;">
             <div>
               <div class="entry-name">Marchtee.com</div>
-              <div class="entry-role">Core Contributor · 5 repositories</div>
-              <div class="entry-desc">Core contributor & maintainer for a D2C e-commerce brand — responsible for the full stack across backend, frontend, ERP, infrastructure, and AI tooling. Lead production operations and PR reviews across repositories. Collaborate with UX designers, product developers, and stakeholders to shape requirements, cut scope responsibly, and drive conversion outcomes.</div>
+              <div class="entry-role">Core Contributor, Full-Stack Software Engineer · 5 repositories</div>
+              <div class="entry-desc">Core contributor and maintainer for a D2C e-commerce brand — responsible for backend, frontend, ERP, infrastructure, checkout, payments, pricing, referrals, and AI tooling. Lead production operations and PR reviews across repositories, translating business requirements into measurable conversion and revenue outcomes.</div>
             </div>
             <div class="marchtee-meta" style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
-              <div class="entry-date">2022 — present</div>
-              <button class="expand-btn" onclick="toggleMarchtee(this)" aria-expanded="false" aria-controls="marchtee-repos">
-                <span class="expand-label">view repos</span>
-                <svg class="expand-chevron" width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2.5 5L7 9.5L11.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
+              <div class="entry-date">Sep 2022 — present</div>
             </div>
           </div>
 
-          <div class="repos-panel" id="marchtee-repos" aria-hidden="true">
+          <div class="repos-panel" id="marchtee-repos">
 
             <div class="repo-item">
               <div class="repo-header">
@@ -564,6 +570,8 @@
                 <li>Migrated entire CMS from codebase to database: navigations, collections, metadata, size guides, static assets to Cloudflare R2/S3</li>
                 <li>Implemented Redis caching with proper namespace strategy; PostgreSQL full-text search via vectors for shop search</li>
                 <li>Built payment gateway success rate dashboard, post-order workflows (COD detection, fraud flagging, fake address detection), and a returns/exchange reconciliation engine</li>
+                <li>Built a rule-based pricing engine for product, customer, campaign, and order-level pricing decisions, making commercial rules explicit, testable, and easier to operate</li>
+                <li>Designed a referral system with unique links, attribution, customer credits, tiered rewards, and safeguards for reliable reward calculation</li>
               </ul>
             </div>
 
@@ -573,9 +581,9 @@
                 <span class="repo-stack">Nuxt.js · Vue · Pinia · PM2</span>
               </div>
               <ul class="repo-bullets">
-                <li>Built the customer-facing single page checkout — guest and authenticated flows, UPI, saved cards, Cashfree and CCAvenue net banking, cookie-based Pinia persistence</li>
-                <li>Achieved 90% reduction in checkout time & improved conversion rates upto 40%; recognised by brands across the ecosystem</li>
-                <li>Shipped single-source international checkout with localisations for over 7 countries, working closely with India Post, DHL, Aramex, and ATC</li>
+                <li>Built the customer-facing single-page checkout — guest and authenticated flows, UPI, saved cards, Cashfree and CCAvenue net banking, cookie-based Pinia persistence</li>
+                <li>Achieved 90% reduction in checkout time and improved conversion rates by up to 40%; supported referral and pricing decisions through the checkout journey</li>
+                <li>Shipped single-source international checkout with localisations for over 7 countries, working closely with India Post, DHL, Aramex, and ATC; contributed to a 25% increase in international orders</li>
                 <li>Deployed and managed over PM2 with structured production logging, error tracking, and debugging tooling</li>
               </ul>
             </div>
@@ -598,7 +606,7 @@
                 <span class="repo-stack">Ansible · Bash · Frigate · Listmonk</span>
               </div>
               <ul class="repo-bullets">
-                <li>Retired legacy Fabric deployer; built Ansible-based CI/CD supporting hard and soft deployments across shop, checkout, and Odoo</li>
+                <li>Retired legacy Fabric deployer; built Ansible-based CI/CD supporting 10+ on-demand deployments daily across shop, checkout, and Odoo</li>
                 <li>Deployed Frigate self-hosted warehouse surveillance with Google Drive backups across 3 locations — single command</li>
                 <li>Implemented fail2ban rate limiting on production servers; set up Listmonk for self-hosted email marketing</li>
               </ul>
@@ -663,25 +671,45 @@
 
         <div class="entry">
           <div>
-            <div class="entry-name">Gemald</div>
-            <div class="entry-role">MongoDB · Express.js · React · Node.js</div>
-            <div class="entry-desc">E-commerce platform for paintings with payment gateway integration, admin portal, and role-based access control.</div>
+            <div class="entry-name">Waltra</div>
+            <div class="entry-role">IoT · Raspberry Pi · SCADA · Time-Series Data · Mobile App · Web Dashboards</div>
+            <div class="entry-desc">Independent water infrastructure monitoring platform for real-time tank levels, pump status, flow readings, device health, event detection, and site-level operations. Integrated legacy SCADA systems and Raspberry Pi field devices into a modern backend, replacing manual and cron-based syncs with near real-time ingestion.</div>
+            <div class="project-shot" aria-label="Waltra dashboard screenshot preview">
+              <div class="shot-panel">
+                <div class="shot-kpi">tank level</div>
+                <div class="shot-value">78%</div>
+                <div class="shot-line"></div>
+                <div class="shot-line"></div>
+              </div>
+              <div class="shot-panel">
+                <div class="shot-kpi">pump status</div>
+                <div class="shot-value">active</div>
+                <div class="shot-line"></div>
+                <div class="shot-line"></div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="entry">
           <div>
-            <div class="entry-name">FitBuddy</div>
-            <div class="entry-role">Python · Jupyter Notebook</div>
-            <div class="entry-desc">User-to-user recommendation system for fitness enthusiasts using cosine similarity and haversine distance across 5–10 metrics.</div>
-          </div>
-        </div>
-
-        <div class="entry">
-          <div>
-            <div class="entry-name">COVID-19 Tracker</div>
-            <div class="entry-role">React · Material-UI · Firebase</div>
-            <div class="entry-desc">Country-wise COVID-19 tracking with disease.sh API integration and live map visualisations.</div>
+            <div class="entry-name"><a href="https://foodcription.com" target="_blank" rel="noopener" class="inline-link">Foodcription</a></div>
+            <div class="entry-role">Next.js · TypeScript · Supabase · PostgreSQL · Stripe · Razorpay · Vercel</div>
+            <div class="entry-desc">Sole engineer on a subscription food ordering platform covering authentication, data modelling, order management, payments, deployment, and production support. Implemented reversible migrations, feature flags, Stripe/Razorpay payment flows, and idempotent order creation; processed 100+ orders in first 30 days.</div>
+            <div class="project-shot" aria-label="Foodcription checkout screenshot preview">
+              <div class="shot-panel">
+                <div class="shot-kpi">orders</div>
+                <div class="shot-value">100+</div>
+                <div class="shot-line"></div>
+                <div class="shot-line"></div>
+              </div>
+              <div class="shot-panel">
+                <div class="shot-kpi">payments</div>
+                <div class="shot-value">2 gateways</div>
+                <div class="shot-line"></div>
+                <div class="shot-line"></div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -721,21 +749,6 @@
       } catch(e) {}
     })();
 
-    function toggleMarchtee(btn) {
-      const panel = document.getElementById('marchtee-repos');
-      const open = panel.classList.contains('open');
-      if (open) {
-        panel.classList.remove('open');
-        panel.setAttribute('aria-hidden', 'true');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.querySelector('.expand-label').textContent = 'view repos';
-      } else {
-        panel.classList.add('open');
-        panel.setAttribute('aria-hidden', 'false');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.querySelector('.expand-label').textContent = 'collapse';
-      }
-    }
   </script>
 </body>
 </html>

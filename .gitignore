@@ -1,0 +1,14 @@
+# Generated previews and local working artifacts
+tmp/
+
+# Local-only cover letter drafts and generated variants
+weasy/cover.txt
+weasy/cover_offgen.txt
+weasy/cover_dhanesh_eu.html
+weasy/cover_dhanesh_eu.pdf
+
+# Superseded resume variants; keep the current resume.html/.pdf files tracked
+weasy/resume_ats.html
+weasy/dhanesh_phulphagar_resume.pdf
+assets/resume/generator.html
+assets/resume/resume.tex
