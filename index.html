@@ -549,79 +549,13 @@
             <div>
               <div class="entry-name">Marchtee.com</div>
               <div class="entry-role">Core Contributor, Full-Stack Software Engineer · 5 repositories</div>
-              <div class="entry-desc">Core contributor and maintainer for a D2C e-commerce brand — responsible for backend, frontend, ERP, infrastructure, checkout, payments, pricing, referrals, and AI tooling. Lead production operations and PR reviews across repositories, translating business requirements into measurable conversion and revenue outcomes.</div>
+              <div class="entry-desc">Core contributor across five production repositories, owning backend, frontend, ERP, infrastructure, checkout, payments, pricing, referrals, and AI tooling. Rebuilt authentication and CMS workflows, improved page performance by 50%, and delivered payment, fraud, returns, and reconciliation systems. Built a single-page international checkout that reduced checkout time by 90% and improved conversion by up to 40%. Replaced legacy deployment tooling with Ansible-based CI/CD supporting 10+ daily deployments and reliable production operations.</div>
             </div>
             <div class="marchtee-meta" style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
               <div class="entry-date">Sep 2022 — present</div>
             </div>
           </div>
 
-          <div class="repos-panel" id="marchtee-repos">
-
-            <div class="repo-item">
-              <div class="repo-header">
-                <span class="repo-name">march-shop</span>
-                <span class="repo-stack">Python · Flask · SQLAlchemy · PostgreSQL · Redis</span>
-              </div>
-              <ul class="repo-bullets">
-                <li>Inherited legacy monolith; rebuilt authentication from scratch — RBAC, multi-device sessions, WebAuthn, OAuth, passwordless OTP</li>
-                <li>Migrated entire CMS from codebase to database: navigations, collections, metadata, size guides, static assets to Cloudflare R2/S3</li>
-                <li>Implemented Redis caching with proper namespace strategy; PostgreSQL full-text search via vectors for shop search</li>
-                <li>Built payment gateway success rate dashboard, post-order workflows (COD detection, fraud flagging, fake address detection), and a returns/exchange reconciliation engine</li>
-                <li>Built a rule-based pricing engine for product, customer, campaign, and order-level pricing decisions, making commercial rules explicit, testable, and easier to operate</li>
-                <li>Designed a referral system with unique links, attribution, customer credits, tiered rewards, and safeguards for reliable reward calculation</li>
-              </ul>
-            </div>
-
-            <div class="repo-item">
-              <div class="repo-header">
-                <span class="repo-name">march-next</span>
-                <span class="repo-stack">Nuxt.js · Vue · Pinia · PM2</span>
-              </div>
-              <ul class="repo-bullets">
-                <li>Built the customer-facing single-page checkout — guest and authenticated flows, UPI, saved cards, Cashfree and CCAvenue net banking, cookie-based Pinia persistence</li>
-                <li>Achieved 90% reduction in checkout time and improved conversion rates by up to 40%; supported referral and pricing decisions through the checkout journey</li>
-                <li>Shipped single-source international checkout with localisations for over 7 countries, working closely with India Post, DHL, Aramex, and ATC; contributed to a 25% increase in international orders</li>
-                <li>Deployed and managed over PM2 with structured production logging, error tracking, and debugging tooling</li>
-              </ul>
-            </div>
-
-            <div class="repo-item">
-              <div class="repo-header">
-                <span class="repo-name">march-odoo</span>
-                <span class="repo-stack">Python · Odoo v14 → v16 → v19(loading)</span>
-              </div>
-              <ul class="repo-bullets">
-                <li>Played a major role in the Odoo v14 to v16 upgrade — custom module migration, ORM compatibility, and data integrity across models</li>
-                <li>Built 10+ internal models covering exchanges, returns, splits, shipping service management, hangtag and stock labels, delivery notes</li>
-                <li>Own and maintain the ERP layer for inventory, invoicing, financial reporting, purchase, and manufacturing</li>
-              </ul>
-            </div>
-
-            <div class="repo-item">
-              <div class="repo-header">
-                <span class="repo-name">march-deployer</span>
-                <span class="repo-stack">Ansible · Bash · Frigate · Listmonk</span>
-              </div>
-              <ul class="repo-bullets">
-                <li>Retired legacy Fabric deployer; built Ansible-based CI/CD supporting 10+ on-demand deployments daily across shop, checkout, and Odoo</li>
-                <li>Deployed Frigate self-hosted warehouse surveillance with Google Drive backups across 3 locations — single command</li>
-                <li>Implemented fail2ban rate limiting on production servers; set up Listmonk for self-hosted email marketing</li>
-              </ul>
-            </div>
-
-            <div class="repo-item">
-              <div class="repo-header">
-                <span class="repo-name">kavinath</span>
-                <span class="repo-stack">Flask · Python · Pi-based Harnessing · Tool Calls · Evaluations</span>
-              </div>
-              <ul class="repo-bullets">
-                <li>Built Kavinath inside the shop Flask application as a customer-support assistant with Pi-based harnessing and structured tool calls</li>
-                <li>Implemented operational actions for editing orders, updating shipping details, exchanges, and returns, with evaluation workflows for support behavior and tool outcomes</li>
-              </ul>
-            </div>
-
-          </div>
         </div>
 
         <div class="entry">
